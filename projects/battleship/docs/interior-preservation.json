@@ -1,0 +1,53 @@
+{
+  "carrier": {
+    "sourceSize": [
+      13.349999952316285,
+      12.07000000178814,
+      43.69325356185436
+    ],
+    "fittedSize": [
+      1.0999410152435303,
+      0.9944784250110388,
+      3.6000001430511475
+    ],
+    "uniformScale": 0.0823925825277273,
+    "originalInteriorVertices": 86340,
+    "damagedInteriorVertices": 86340,
+    "allAuthoredInteriorVerticesPreserved": true,
+    "triangles": 52758
+  },
+  "battleship": {
+    "sourceSize": [
+      8.094999999701976,
+      13.57000000178814,
+      43.69325356185436
+    ],
+    "fittedSize": [
+      0.6021238565444946,
+      1.0093662878498435,
+      3.25
+    ],
+    "uniformScale": 0.0743821925597538,
+    "originalInteriorVertices": 83688,
+    "damagedInteriorVertices": 83688,
+    "allAuthoredInteriorVerticesPreserved": true,
+    "triangles": 59228
+  },
+  "destroyer": {
+    "sourceSize": [
+      6.394999999701977,
+      12.42000000178814,
+      37.69325356185436
+    ],
+    "fittedSize": [
+      0.4920111298561096,
+      0.9555556250270456,
+      2.9000000953674316
+    ],
+    "uniformScale": 0.07693684481869204,
+    "originalInteriorVertices": 81912,
+    "damagedInteriorVertices": 81912,
+    "allAuthoredInteriorVerticesPreserved": true,
+    "triangles": 47985
+  }
+}

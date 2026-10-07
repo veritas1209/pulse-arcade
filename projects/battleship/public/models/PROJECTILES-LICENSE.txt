@@ -1,0 +1,33 @@
+EXTERNAL PROJECTILE MODEL NOTICES
+
+Tomahawk Cruise Missile
+Author: Abbott Animation
+Source: https://www.abbottanimation.com/AABlog/free-tomahawk-missile-for-download/
+Original package: AbbottFreebies-TomahawkMissile.zip (OBJ / FBX / LWO)
+License: custom author permission, NOT CC0. The author offers the model as a free
+ download and permits use for digital military needs. License/source page saved
+ in artifacts/external-assets/projectiles/missile-license.html.
+Modifications: triangulation, invalid-face removal, meshoptimizer reduction,
+ winding repair, centered +Z-forward frame, naval-gray vertex-color finish,
+ normalization to a 5.56m representative cruise-missile body length.
+Runtime: 2,295 triangles, one material, no textures.
+
+Artillery Shell
+Author/publisher: Polyfork / Lucas Martinic
+Source: https://polyfork.dev/asset/artillery-shell-0870bc
+License: Polyfork free commercial game-use license, NOT CC0.
+Terms: https://polyfork.dev/licensing
+Personal/commercial game use and modifications are permitted. Standalone asset
+ redistribution/resale and use for a competing commercial asset generator are
+ prohibited. Models may ship inside the game. Original raw files are retained
+ only in the local source audit; they are not placed in this public directory.
+Publisher describes its catalog as AI-native, code-created assets.
+Modifications: retained original projectile, driving band and ogive; removed
+ brass cartridge case; closed extracted base; adapted generic projectile to
+ 406mm diameter / 1.62m length; rotated +Y source nose to +Z game nose.
+Runtime: 336 triangles, one material, no textures.
+
+Both runtime models are derived from the downloaded original mesh vertices.
+They are generic visual representations, not engineering-accurate replicas.
+Shared game scale: 84.583 metres per world unit. Readability scaling affects
+ visual size only and does not change hit logic or weapon range.

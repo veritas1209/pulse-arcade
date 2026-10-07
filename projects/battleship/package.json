@@ -1,0 +1,28 @@
+{
+  "name": "battleship",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "playwright test tests/battle-visual.spec.ts tests/visual.spec.ts tests/rules.spec.ts",
+    "verify:visual": "playwright test tests/battle-visual.spec.ts",
+    "inspect:canvas": "node scripts/inspect-threejs-canvas.mjs",
+    "prepare:pulse": "node scripts/prepare-pulse.mjs",
+    "test:server": "python -m unittest discover -s tests -p test_rooms.py"
+  },
+  "dependencies": {
+    "three": "^0.184.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.0",
+    "@types/pngjs": "^6.0.5",
+    "@types/three": "^0.184.1",
+    "pngjs": "^7.0.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.13"
+  }
+}

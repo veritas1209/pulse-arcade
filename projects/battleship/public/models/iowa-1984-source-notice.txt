@@ -1,0 +1,7 @@
+USS BB-61 Iowa 1984 - user-supplied asset
+Source: attached uss-iowa.zip / source/USS+BB-61+Iowa+1984+2.glb
+Author/source URL/license: not included in ZIP or embedded GLB metadata; no license inferred.
+Embedded generator: gltfpack 0.15
+Source SHA256: d751accd7d536a598df232cbfcfa78acb8aff9b7b3df186970c7b5ebcbcce8da
+Changes: original node transforms, mirrored winding correction, one uniform physical scale, source Y=0 waterline, source indexed UV/normal/color tuples, original image atlas with radar/fence alpha cutouts, source-index distance LODs, source-derived tactical regions, hull-fitted internal decks/rooms and destruction integration. Offline canonical source retained in artifacts/external-assets/us-fleet/iowa-1984.
+

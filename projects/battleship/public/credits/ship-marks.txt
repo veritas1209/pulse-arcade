@@ -1,0 +1,9 @@
+# Ship marks
+
+Author: Cathelineau. Source: Game-icons.net. License: CC BY 3.0 — https://creativecommons.org/licenses/by/3.0/
+
+- carrier.svg: https://game-icons.net/1x1/cathelineau/carrier.html — aircraft carrier UI marker.
+- cruiser.svg: https://game-icons.net/1x1/cathelineau/cruiser.html — light escort-ship silhouette assigned to the destroyer UI marker. Original icon is named Cruiser; it is not an official destroyer classification symbol.
+- battleship.svg: https://game-icons.net/1x1/cathelineau/battleship.html — battleship UI marker.
+
+Original downloaded SVGs retained. Inline UI derivatives recolor the paths to faction blue/red, remove the inherited outline stroke and resize them. Torpedo icon remains the locally authored SVG. No torpedo HP/progress bar is shown.

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080d15">
+<title>TETRIS / VERSUS · PULSE ARCADE</title>
+<link rel="stylesheet" href="duel.css">
+<script src="engine.js" defer></script><script src="effects.js" defer></script><script src="stage.js" defer></script><script src="duel.js" defer></script>
+</head>
+<body data-mode="lobby">
+<canvas id="ambience" aria-hidden="true"></canvas><canvas id="screen-fx" aria-hidden="true"></canvas>
+<div id="big-callout" aria-hidden="true"><span id="callout-sub"></span><strong id="callout-word"></strong><i></i></div>
+<main class="duel-app">
+<header class="duel-header"><a class="brand" href="/">PULSE <span>ARCADE</span><i>↗</i></a><div class="mode-mark">TETRIS <b>/ VERSUS</b></div><a href="./">혼자 플레이 ↗</a></header>
+<section id="lobby" class="lobby">
+<div class="lobby-story"><p class="eyebrow">SAME BLOCKS. DIFFERENT INSTINCTS.</p><h1>두 개의 보드.<br><span>하나의 승자.</span></h1><p class="lobby-copy">친구를 초대하고, 정면으로 붙으세요.<br>당신의 T스핀이 상대에겐 위기가 됩니다.</p><div class="versus-art" aria-hidden="true"><div class="art-stack"><i></i><i></i><i></i><i></i><i></i></div><strong>VS</strong><div class="art-stack rival"><i></i><i></i><i></i><i></i><i></i></div></div><div class="lobby-tags"><span>실시간 1대1</span><span>같은 블록 순서</span><span>공격 & 상쇄</span></div></div>
+<form id="join-form" class="lobby-card"><div class="card-label"><span>THE CHALLENGER</span><b>01 / 02</b></div><h2>오늘의 라이벌은?</h2><p>방을 만들고 초대 링크를 보내세요.</p><label for="duel-name">플레이어 이름</label><input id="duel-name" autocomplete="nickname" placeholder="당신의 이름" minlength="2" maxlength="16" required><button id="create-room" type="button" class="primary">새 대전 방 만들기 <span>↗</span></button><div class="or"><span>초대받았다면</span></div><label for="room-code">6자리 방 코드</label><div class="join-row"><input id="room-code" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="ABC234" maxlength="6"><button id="join-room" type="submit">입장 ↗</button></div><p id="lobby-message" class="message" role="status">로그인 없이 바로 대전할 수 있어요.</p></form>
+</section>
+<section id="match" hidden>
+<div class="match-strip"><div class="room-info"><span>PRIVATE ROOM</span><strong id="room-label">------</strong><button id="copy-invite">초대 링크 복사 ↗</button></div><div class="round-score"><b id="my-wins">00</b><span>MATCH SCORE</span><b id="their-wins">00</b></div><div class="net-info"><i id="net-dot"></i><span id="connection">연결 중</span><b id="ping">— ms</b></div></div>
+<div class="arena">
+<aside class="my-tools"><div class="tool-stat"><span>SCORE</span><b id="my-score">000000</b></div><div class="tool-stat"><span>LINES</span><b id="my-lines">00</b></div><div class="preview-box"><span>HOLD <kbd>C</kbd></span><canvas id="hold" width="160" height="90" aria-label="보관 블록" role="img"></canvas></div><div class="preview-box"><span>NEXT</span><canvas id="next" width="160" height="260" aria-label="다음 블록" role="img"></canvas></div><div class="attack-total"><span>ATTACK SENT</span><b id="sent">0</b></div></aside>
+<div class="player-field own"><div class="player-heading"><span><i></i><b id="my-name">YOU</b></span><small>YOU</small></div><div id="my-shell" class="board-shell"><canvas id="board" width="600" height="1200" aria-label="내 테트리스 게임판" role="img"></canvas><div class="field-overlay" id="field-overlay"><span class="eyebrow" id="round-tag">WAITING FOR TWO</span><h2 id="round-title">친구를 기다리는 중</h2><p id="round-note">링크를 보내 함께 입장하세요.</p><button id="ready" class="primary">준비 완료 <span>↗</span></button></div><div id="attack-flash" aria-hidden="true"></div><div id="board-notice" role="status"></div></div><div class="incoming-bar"><span>INCOMING</span><div id="garbage-meter"></div><strong id="pending-count">0</strong></div></div>
+<div class="arena-divider"><span>VERSUS</span><b>VS</b><div class="pulse-line"></div><span id="match-clock">00:00</span></div>
+<div class="player-field opponent"><div class="player-heading"><span><i></i><b id="opponent-name">CHALLENGER</b></span><small>RIVAL</small></div><div class="rival-shell"><canvas id="opponent-board" width="600" height="1200" aria-label="상대 테트리스 게임판" role="img"></canvas><div id="opponent-wait"><b>?</b><span>CHALLENGER<br>WANTED</span></div></div><div class="opponent-stats"><span>SCORE <b id="their-score">000000</b></span><span>LINES <b id="their-lines">00</b></span></div></div>
+</div>
+<div class="arena-bottom"><p id="match-message" role="status">두 플레이어가 준비하면 시작합니다.</p><div><button id="surrender" hidden>이번 판 기권</button><button id="leave-room">방 나가기 ↗</button></div></div>
+<div class="touch-controls" aria-label="터치 조작"><button data-action="hold">보관</button><button data-action="rotate" aria-label="회전">↻</button><button data-action="left" aria-label="왼쪽 이동">←</button><button data-action="down" aria-label="아래로 이동">↓</button><button data-action="right" aria-label="오른쪽 이동">→</button><button data-action="drop" aria-label="바로 떨어뜨리기">⤓</button></div>
+</section>
+<div class="duel-footer"><div class="energy"><span id="energy-name">WARMING UP</span><div class="energy-track"><i id="energy-fill"></i></div><b id="energy-value">0%</b></div><div class="settings"><button id="music" aria-pressed="true">MUSIC ON</button><button id="sound" aria-pressed="true">SOUND ON</button><button id="motion" aria-pressed="true">FX ON</button></div></div>
+<details class="duel-rules"><summary>대전 규칙 & 조작법 <span>↓</span></summary><div><p><b>지우면 공격, 공격하면 상쇄.</b> 더블 1줄 · 트리플 2줄 · 테트리스 4줄. T스핀은 최대 6줄, 백투백·콤보·퍼펙트 클리어는 보너스 공격. 내 공격은 먼저 대기 중인 방해 줄을 줄입니다. 방해 줄은 경고 후 블록 고정에 맞춰 올라옵니다.</p><p><b>먼저 천장에 닿으면 패배.</b> 두 명이 준비하면 같은 블록 순서로 시작합니다. 대전 중 일시정지는 없습니다. 연결이 끊기거나 다른 탭으로 10초 넘게 이동하면 패배하며, 10분이 지나면 무승부입니다.</p><p><b>← →</b> 이동 · <b>↑ / X</b> 회전 · <b>Z</b> 반대 회전 · <b>↓</b> 내리기 · <b>Space</b> 하드 드롭 · <b>C / Shift</b> 보관. 대전 점수는 혼자 플레이 랭킹에 등록되지 않습니다.</p></div></details>
+</main>
+</body></html>

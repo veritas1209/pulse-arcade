@@ -1,0 +1,12 @@
+{
+  "battleship": {
+    "source": "projects/battleship",
+    "files": 395,
+    "release_assets_verified": true
+  },
+  "screw-harbor": {
+    "source": "projects/screw-harbor",
+    "files": 89,
+    "release_assets_verified": true
+  }
+}

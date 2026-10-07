@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#050c11" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="30×30 전장에서 함대를 지휘하는 3D 해전 게임 Battleship" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <title>Battleship — Fleet Command</title>
+  </head>
+  <body data-phase="setup" data-mode="pve">
+    <main id="app" aria-label="Battleship 함대전">
+      <canvas id="game-canvas" aria-label="30 × 30 3D 해전 지도"></canvas>
+      <div class="scene-shade" aria-hidden="true"></div>
+
+      <header class="command-header">
+        <a class="hub-link" href="/" aria-label="Pulse Arcade로 돌아가기">
+          <span class="hub-mark" aria-hidden="true"></span><span>Pulse</span>
+        </a>
+        <div class="game-title"><strong>BATTLESHIP</strong><span>FLEET COMMAND</span></div>
+        <nav class="header-actions" aria-label="함교 제어">
+          <label class="volume-control" for="volume-control" title="음량">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h4l5-4v14l-5-4H5Zm12.5-.5a5 5 0 0 1 0 7M19.5 6a8 8 0 0 1 0 12"/></svg>
+            <input id="volume-control" type="range" min="0" max="100" step="1" value="76" aria-label="전체 음량" aria-valuetext="76%" />
+            <output id="volume-value" class="sr-only" for="volume-control">전체 음량 76%</output>
+          </label>
+          <button id="help-toggle" class="icon-button" type="button" aria-label="작전 안내 열기" aria-expanded="false" aria-controls="help-panel" title="작전 안내">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.6 9a2.5 2.5 0 1 1 4.4 1.6c-1.2 1.2-2 1.5-2 3M12 18h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+          </button>
+        </nav>
+      </header>
+
+      <section class="mission-status" aria-live="polite" aria-atomic="true">
+        <i aria-hidden="true"></i>
+        <div><span id="state-label">작전 설정</span><strong id="target-label">30 × 30 공유 전장</strong></div>
+        <aside class="network-status"><span id="connection-label">로컬 함교</span><button id="room-code" type="button" aria-label="작전실 코드 복사" title="코드 복사" hidden>—</button></aside>
+      </section>
+
+      <section class="compass-hud" aria-label="카메라 방위각">
+        <strong id="compass-heading">000° N</strong>
+        <div class="compass-window" aria-hidden="true">
+          <div id="compass-tape" class="compass-tape">
+            <span data-bearing="270">W</span><i></i><i></i><i></i>
+            <span data-bearing="0">N</span><i></i><i></i><i></i>
+            <span data-bearing="90">E</span><i></i><i></i><i></i>
+            <span data-bearing="180">S</span><i></i><i></i><i></i>
+            <span data-bearing="270">W</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="setup-panel" class="setup-panel" aria-labelledby="setup-title">
+        <div class="panel-heading"><span>COMMAND BRIEF / 01</span><h1 id="setup-title">함대전 준비</h1><p>함선 7척 · 전 팀 교대</p></div>
+        <div class="setup-fields">
+          <label for="mode-select">교전 방식</label>
+          <div class="select-shell"><select id="mode-select" disabled><option value="pve">AI 교전</option><option value="online">온라인 1v1</option></select></div>
+          <label for="difficulty">AI 난이도</label>
+          <div class="select-shell"><select id="difficulty"><option value="easy">정찰 · 쉬움</option><option value="normal" selected>함장 · 보통</option><option value="hard">제독 · 어려움</option></select></div>
+        </div>
+        <section class="room-controls" aria-label="비공개 작전실" hidden>
+          <button id="create-room" class="secondary-button" type="button">방 만들기</button>
+          <label class="join-room"><span class="sr-only">작전실 코드</span><input id="room-input" maxlength="6" autocomplete="off" placeholder="작전실 코드" /><button id="join-room" class="secondary-button" type="button">입장</button></label>
+        </section>
+        <div class="fleet-manifest" aria-label="출격 함대">
+          <span><b>1</b> 항공모함</span><span><b>3</b> 전함</span><span><b>3</b> 구축함</span>
+        </div>
+        <button id="start-game" class="primary-button" type="button"><span>출격</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 7 7-7 7"/></svg></button>
+      </section>
+
+      <section class="shared-fleet-selector" aria-labelledby="fleet-picker-title">
+        <div class="fleet-picker-heading">
+          <div><span id="fleet-picker-title">함선 선택</span><small class="placement-copy">함선 선택 → 바다 클릭 · R 회전</small></div>
+          <b class="placement-copy">7×7 배치 구역</b>
+          <button id="rotate-placement" class="rotate-placement placement-copy" type="button" aria-label="함선 45도 회전" title="함선 회전">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10a8 8 0 1 1 2.3 7.7M4 4v6h6"/></svg><span>회전</span><kbd>R</kbd>
+          </button>
+        </div>
+        <div id="ship-picker" class="ship-picker" role="listbox" aria-label="지휘할 함선"></div>
+      </section>
+
+      <section id="battle-panel" class="battle-panel" aria-label="전투 지휘" hidden>
+        <aside class="fleet-rail" aria-labelledby="fleet-title">
+          <div class="rail-title"><span>FLEET STATUS</span><h2 id="fleet-title">아군 함대</h2></div>
+          <div class="turn-readout"><span>ROUND / TURN</span><strong id="turn-counter">01 / 01</strong></div>
+          <div id="fleet-status" class="fleet-status" aria-label="함대 내구도"></div>
+        </aside>
+
+        <section class="order-dock" aria-label="함선 명령">
+          <div class="selected-readout">
+            <span>SELECTED UNIT</span><strong id="selected-name">함선 선택</strong>
+            <dl><div><dt>HP</dt><dd id="selected-hp">— / —</dd></div><div><dt>AP</dt><dd id="selected-ap">— / —</dd></div></dl>
+            <div id="selected-parts" class="part-status part-status-own" aria-label="선택 함선 부품 상태" hidden></div>
+            <span id="repair-status" class="repair-status" hidden></span>
+          </div>
+          <div class="action-picker" role="group" aria-label="행동 선택">
+            <button id="action-attack" class="action-button" type="button" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg><span><strong>공격</strong><small>1AP</small></span>
+            </button>
+            <button id="action-recon" class="action-button" type="button" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12s3.5-5 9-5 9 5 9 5-3.5 5-9 5-9-5-9-5Z"/><circle cx="12" cy="12" r="2.5"/></svg><span><strong>정찰</strong><small>1AP</small></span>
+            </button>
+            <button id="action-sonar" class="action-button" type="button" aria-pressed="false" title="함선 중심 반경 12.5 해역을 2턴 동안 탐지">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2"/><path d="M8.5 8.5a5 5 0 0 0 0 7M15.5 8.5a5 5 0 0 1 0 7M5.5 5.5a9.2 9.2 0 0 0 0 13M18.5 5.5a9.2 9.2 0 0 1 0 13"/></svg><span><strong>소나</strong><small>2AP</small></span>
+            </button>
+            <button id="action-torpedo" class="action-button" type="button" aria-pressed="false" title="반경 15 내 300 피해 · 방어 무시">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h12M7 9l-3 3 3 3M16 8l4 4-4 4Z"/><path d="M10 9v6"/></svg><span><strong>어뢰</strong><small>1AP</small></span>
+            </button>
+            <button id="action-repair" class="action-button" type="button" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 19 6v5c0 4.6-2.8 7.8-7 10-4.2-2.2-7-5.4-7-10V6Z"/><path d="M12 8v6M9 11h6"/></svg><span><strong>대미지 컨트롤</strong><small>1AP</small></span>
+            </button>
+          </div>
+          <button id="confirm-action" class="confirm-button" type="button" disabled><span>목표 지정</span><strong>명령 실행</strong></button>
+          <button id="end-turn" class="end-turn-button" type="button"><span>턴 종료</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+        </section>
+
+      </section>
+
+      <aside class="intel-rail" aria-label="전장 정보">
+        <section id="minimap-panel" class="minimap-panel" aria-labelledby="map-title">
+          <div class="rail-title compact"><span>TACTICAL MAP / 30×30</span><h2 id="map-title">MAP</h2></div>
+          <canvas id="tactical-map" width="240" height="240" aria-label="30 × 30 전술 미니맵"></canvas>
+        </section>
+        <section id="enemy-panel" class="enemy-panel" aria-labelledby="enemy-name" hidden>
+          <div class="enemy-heading">
+            <div><span>CONTACT / VISUAL</span><h2 id="enemy-name">적 함선</h2></div>
+            <button id="enemy-close" class="close-button" type="button" data-close="enemy-panel" aria-label="적 함선 정보 닫기">×</button>
+          </div>
+          <div class="enemy-vitals"><span>REMAINING HP</span><strong id="enemy-hp" aria-live="polite">— / —</strong></div>
+          <div id="enemy-parts" class="part-status part-status-enemy" aria-label="적 함선 부품 상태" hidden></div>
+          <canvas id="enemy-preview" width="320" height="220" aria-label="선택한 적 함선 3D 상태"></canvas>
+        </section>
+        <details class="log-panel">
+          <summary class="log-title"><h2 id="log-title">교전 기록</h2><span>LIVE</span></summary>
+          <ol id="battle-log" aria-live="polite"><li><time>—</time><span>명령 대기</span></li></ol>
+        </details>
+      </aside>
+
+      <button id="minimap-toggle" class="minimap-toggle" type="button" aria-expanded="false" aria-controls="minimap-panel">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 6 5-2 6 2 5-2v14l-5 2-6-2-5 2Zm5-2v14m6-12v14"/></svg><span>전술 지도</span>
+      </button>
+
+      <aside id="help-panel" class="help-panel" aria-labelledby="help-title" hidden>
+        <div class="overlay-heading"><div><span>FIELD MANUAL</span><h2 id="help-title">전투 규칙</h2></div><button class="close-button" type="button" data-close="help-panel" aria-label="닫기">×</button></div>
+        <dl class="rules-list">
+          <div><dt>턴</dt><dd>행동 → 턴 종료 → 항모 → 구축함 1–3 → 전함 1–3 공격 → 상대 행동</dd></div>
+          <div><dt>초기</dt><dd>첫 턴은 공격 불가</dd></div>
+          <div><dt>AP</dt><dd>이동·공격·정찰·어뢰·복구 1 · 소나 2</dd></div>
+          <div><dt>정찰</dt><dd>F-22 출격 · 턴 1회</dd></div>
+          <div><dt>소나</dt><dd>전 함선 · 함교 필요 · 함선 중심 직경 25를 2턴 탐지</dd></div>
+          <div><dt>어뢰</dt><dd>구축함 · 사거리 15 · 피해 300 · 방어 무시 · 섬 우회 · 발사 예약 · 자기 공격 단계마다 5칸</dd></div>
+          <div><dt>호위</dt><dd>구축함 주변 아군 미사일 50% 요격</dd></div>
+          <div><dt>화재</dt><dd>내 턴 시작 시 손실 HP 5% · 최소 5, 최대 50</dd></div>
+          <div><dt>복구</dt><dd>1 AP · HP +50 · 화재 억제 · 전투당 2회</dd></div>
+          <div><dt>부품</dt><dd>파괴된 부품은 복구 불가</dd></div>
+          <div><dt>승리</dt><dd>적 함선 7척을 모두 격침</dd></div>
+        </dl>
+        <div class="help-controls"><span>왼쪽 드래그 · 시점 회전</span><span>함선 선택 후 우클릭 · 즉시 이동</span><span>WASD · 수평 이동</span><span>우클릭·휠 클릭 드래그 · 화면 이동</span><span>휠 · 확대·축소</span><span>1–7 · 함선 선택</span><span>스페이스바 · 선택 함선 보기</span></div>
+        <p class="audio-credit"><a href="./audio/LICENSE.txt" target="_blank" rel="noopener">음원 출처</a> · <a href="./models/f18-source-notice.txt" target="_blank" rel="noopener">전투기 출처</a> · <a href="./models/fleet-source-notice.txt" target="_blank" rel="noopener">함선 출처</a> · <a href="./credits/ship-marks.txt" target="_blank" rel="noopener">함종 마크: Cathelineau · CC BY 3.0</a></p>
+        <button id="exit-action" class="danger-button" type="button">작전 나가기</button>
+      </aside>
+
+      <section id="result-panel" class="result-panel" aria-labelledby="result-title" hidden>
+        <span>OPERATION COMPLETE</span><h2 id="result-title">승리</h2><p id="result-message">적 함대를 격침했습니다.</p>
+        <div><button id="rematch" class="primary-button" type="button">재대결</button><button id="restart" class="secondary-button" type="button">새 작전</button></div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

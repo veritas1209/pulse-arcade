@@ -1,0 +1,84 @@
+{
+  "generator": "scripts/generate-material-atlas.py",
+  "seed": 2765,
+  "atlas": {
+    "width": 2048,
+    "height": 1024,
+    "columns": 4,
+    "rows": 2,
+    "cellSize": 512
+  },
+  "uvIndexRule": "index = row * 4 + column; origin is top-left",
+  "materials": [
+    {
+      "index": 0,
+      "row": 0,
+      "column": 0,
+      "name": "oak-planks"
+    },
+    {
+      "index": 1,
+      "row": 0,
+      "column": 1,
+      "name": "brushed-steel-plates"
+    },
+    {
+      "index": 2,
+      "row": 0,
+      "column": 2,
+      "name": "limestone-blocks"
+    },
+    {
+      "index": 3,
+      "row": 0,
+      "column": 3,
+      "name": "marine-painted-metal"
+    },
+    {
+      "index": 4,
+      "row": 1,
+      "column": 0,
+      "name": "aged-copper"
+    },
+    {
+      "index": 5,
+      "row": 1,
+      "column": 1,
+      "name": "ceramic-roof-tiles"
+    },
+    {
+      "index": 6,
+      "row": 1,
+      "column": 2,
+      "name": "woven-fabric"
+    },
+    {
+      "index": 7,
+      "row": 1,
+      "column": 3,
+      "name": "non-slip-steel-deck"
+    }
+  ],
+  "files": {
+    "color": {
+      "path": "public/materials/surface-color.webp",
+      "bytes": 116672,
+      "sha256": "3119455d61b329ba0cd9a5b7391bdc40c49bd5d5dcb6f3e247ce2cc44b148404"
+    },
+    "roughness": {
+      "path": "public/materials/surface-roughness.webp",
+      "bytes": 426714,
+      "sha256": "1988d2e62ed57d3dec84f49ba735b13c212416de743bb36b98814ba9b48fa6c4"
+    },
+    "normal": {
+      "path": "public/materials/surface-normal.webp",
+      "bytes": 957364,
+      "sha256": "681c374a8f57bd6252823fdb3241cf6bb9e741baa0aa885bf463148344cc8ee3"
+    }
+  },
+  "notes": [
+    "All cells are periodic in U and V; shader-side half-texel tile clamping is still required for atlas mip safety.",
+    "Color is neutral grayscale to preserve runtime vertex-color tinting.",
+    "Normal RGB uses tangent convention +X right, +Y up, +Z outward."
+  ]
+}

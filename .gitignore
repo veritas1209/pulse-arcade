@@ -12,3 +12,16 @@ data/
 __pycache__/
 *.pyc
 *.log
+.venv/
+venv/
+artifacts/
+test-results/
+playwright-report/
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+projects/*/dist/
+projects/*/release/

@@ -1,0 +1,71 @@
+import * as THREE from 'three';
+import type {ShipKind} from '../contract';
+import type {FleetAsset} from './fleet';
+
+type Role='gun'|'ciws'|'lid';
+type Layout={id:string;role:Role;parts:Set<number>;pivot:THREE.Vector3;muzzle:THREE.Vector3;home:number;lid?:THREE.Box3};
+type Actor={layout:Layout;group:THREE.Group;mesh:THREE.Mesh;well?:THREE.Mesh;from:number;to:number;elapsed:number;duration:number;closeAt:number;defenseUntil:number};
+type Vessel={kind:ShipKind;group:THREE.Group;asset:FleetAsset;source:THREE.BufferGeometry;staticGeometry:THREE.BufferGeometry;actors:Map<string,Actor>};
+export type PreparedWeaponShot={launchDelay:number;getMuzzle:()=>THREE.Vector3;fire:()=>void;mountId:string};
+const layouts=new WeakMap<FleetAsset,Layout[]>(),filtered=new WeakMap<THREE.BufferGeometry,Map<FleetAsset,THREE.BufferGeometry>>();
+const wrap=(a:number)=>Math.atan2(Math.sin(a),Math.cos(a));
+const component=(a:THREE.BufferAttribute|THREE.InterleavedBufferAttribute,i:number,j:number)=>j===0?a.getX(i):j===1?a.getY(i):j===2?a.getZ(i):a.getW(i);
+/** Exact attribute copy; aPart/aSourceTile/UV/normal values survive extraction. */
+function subset(source:THREE.BufferGeometry,indices:number[]){const result=new THREE.BufferGeometry();for(const [name,a] of Object.entries(source.attributes)){const data=new Float32Array(indices.length*a.itemSize);for(let i=0;i<indices.length;i++)for(let j=0;j<a.itemSize;j++)data[i*a.itemSize+j]=component(a,indices[i],j);result.setAttribute(name,new THREE.BufferAttribute(data,a.itemSize));}result.userData={...source.userData};result.computeBoundingBox();result.computeBoundingSphere();return result;}
+function faces(source:THREE.BufferGeometry,visit:(ids:number[],part:number)=>void){const p=source.getAttribute('position'),part=source.getAttribute('aPart'),ix=source.index,count=ix?.count??p.count;if(!part)return;for(let i=0;i<count;i+=3){const ids=[0,1,2].map(j=>ix?ix.getX(i+j):i+j);visit(ids,Math.round(part.getX(ids[0])));}}
+function canonicalVertices(asset:FleetAsset,parts:Set<number>){const points:THREE.Vector3[]=[];for(const source of asset.sectors.map(s=>s.intact)){const p=source.getAttribute('position');faces(source,(ids,part)=>{if(parts.has(part))for(const i of ids)points.push(new THREE.Vector3().fromBufferAttribute(p,i));});}return points;}
+function actorLayout(asset:FleetAsset,id:string,role:'gun'|'ciws',indices:number[],home:number):Layout|undefined{const parts=new Set(indices),points=canonicalVertices(asset,parts);if(!points.length)return;const bounds=new THREE.Box3().setFromPoints(points),height=bounds.max.y-bounds.min.y,bottom=points.filter(p=>p.y<=bounds.min.y+Math.max(.0015,height*.08)),pivot=new THREE.Box3().setFromPoints(bottom).getCenter(new THREE.Vector3());pivot.y=bounds.min.y;
+ const forward=new THREE.Vector3(Math.sin(home),0,Math.cos(home));let candidates=points;if(role==='ciws')candidates=points.filter(p=>p.y>bounds.min.y+height*.22&&p.y<bounds.min.y+height*.70);if(!candidates.length)candidates=points;
+ const extreme=Math.max(...candidates.map(p=>p.dot(forward))),tips=candidates.filter(p=>p.dot(forward)>extreme-.0003),muzzle=tips.reduce((sum,p)=>sum.add(p),new THREE.Vector3()).multiplyScalar(1/tips.length);muzzle.addScaledVector(forward,.0006);return{id,role,parts,pivot,muzzle,home};}
+function lidLayout(asset:FleetAsset,id:string,partId:string):Layout|undefined{const part=asset.parts.find(p=>p.id===partId);if(!part)return;const candidates:{bounds:THREE.Box3;score:number}[]=[];
+ for(const source of asset.sectors.map(s=>s.intact)){const p=source.getAttribute('position'),n=source.getAttribute('normal');faces(source,(ids,index)=>{if(index!==part.index||ids.some(i=>n.getY(i)<.9))return;const bounds=new THREE.Box3().setFromPoints(ids.map(i=>new THREE.Vector3().fromBufferAttribute(p,i))),size=bounds.getSize(new THREE.Vector3());if(size.y>.00015||size.x<.0082||size.x>.009||size.z<.0082||size.z>.009)return;const center=bounds.getCenter(new THREE.Vector3()),bank=part.bounds.getCenter(new THREE.Vector3());candidates.push({bounds,score:center.distanceToSquared(bank)});});}
+ candidates.sort((a,b)=>a.score-b.score);const lid=candidates[0]?.bounds;if(!lid)return;const center=lid.getCenter(new THREE.Vector3()),pivot=new THREE.Vector3(lid.min.x,center.y,center.z);return{id,role:'lid',parts:new Set([part.index]),pivot,muzzle:center.clone().add(new THREE.Vector3(0,.002,0)),home:0,lid};}
+function describe(asset:FleetAsset){const cached=layouts.get(asset);if(cached)return cached;const out:Layout[]=[];const add=(l:Layout|undefined)=>{if(l)out.push(l);};
+ if(asset.kind==='battleship'){
+  for(const [source,home] of [['8666',Math.PI],['11100',Math.PI],['10979',0]] as const){const p=asset.parts.find(p=>p.id===`battleship-weapon-iowa-assembly-${source}`);if(p)add(actorLayout(asset,`iowa-main-${source}`,'gun',[p.index],home));}
+  for(const source of ['7923','8227','9099','9403']){const p=asset.parts.find(p=>p.id===`battleship-weapon-iowa-assembly-${source}`);if(p)add(actorLayout(asset,`iowa-phalanx-${source}`,'ciws',[p.index],p.bounds.getCenter(new THREE.Vector3()).x<0?-Math.PI/2:Math.PI/2));}
+ }else if(asset.kind==='destroyer'){
+  for(const [id,ends,home] of [['ddg-ciws-forward',['0-1','0-4'],Math.PI],['ddg-ciws-aft',['0-0','0-2','0-5'],0]] as const){const indices=ends.map(end=>asset.parts.find(p=>p.id===`destroyer-airDefense-${end}`)?.index).filter((i):i is number=>i!==undefined);if(indices.length)add(actorLayout(asset,id,'ciws',indices,home));}
+  add(lidLayout(asset,'ddg-vls-forward','destroyer-weapon-1-8172'));add(lidLayout(asset,'ddg-vls-aft','destroyer-weapon-1-8919'));
+ }else{
+  for(const mount of [0,1]){const parts=asset.parts.filter(p=>new RegExp(`^cv-ford-ciws-(?:base|turret|radar)-${mount}$|^cv-ford-ciws-barrel-${mount}-`).test(p.id));if(parts.length)add(actorLayout(asset,`ford-ciws-${mount}`,'ciws',parts.map(p=>p.index),Math.PI));}
+ }
+ layouts.set(asset,out);return out;
+}
+function belongs(source:THREE.BufferGeometry,ids:number[],part:number,layout:Layout){if(!layout.parts.has(part))return false;if(!layout.lid)return true;const p=source.getAttribute('position'),n=source.getAttribute('normal'),b=layout.lid;return ids.every(i=>n.getY(i)>.85&&Math.abs(p.getY(i)-b.max.y)<.00016&&p.getX(i)>=b.min.x-.00002&&p.getX(i)<=b.max.x+.00002&&p.getZ(i)>=b.min.z-.00002&&p.getZ(i)<=b.max.z+.00002);}
+function partition(source:THREE.BufferGeometry,asset:FleetAsset){const list=describe(asset),actorIndices=new Map<string,number[]>(),staticIndices:number[]=[];for(const l of list)actorIndices.set(l.id,[]);faces(source,(ids,part)=>{const l=list.find(l=>belongs(source,ids,part,l));(l?actorIndices.get(l.id)!:staticIndices).push(...ids);});return{staticIndices,actorIndices};}
+/** Returns a cached owned static clone. Caller disposes it once when its source
+ * cache is retired. Canonical/shared fleet geometry is never changed/disposed. */
+export function stripAnimatedMounts(source:THREE.BufferGeometry,kind:ShipKind,asset:FleetAsset){if(kind!==asset.kind)throw new Error('Weapon asset kind mismatch');let cache=filtered.get(source);if(!cache){cache=new Map();filtered.set(source,cache);}let result=cache.get(asset);if(!result){result=subset(source,partition(source,asset).staticIndices);cache.set(asset,result);}return result;}
+/** Original-source mount actors. sync must receive the UNFILTERED current
+ * damage/LOD geometry. The caller owns returned static clones; this controller
+ * owns actor geometries only. prepare().fire() runs at actual projectile birth. */
+export function createWeaponMounts(material:THREE.Material){const vessels=new Map<string,Vessel>(),wellMaterial=new THREE.MeshStandardMaterial({color:0x10191c,roughness:1,metalness:.1});let clock=0,prepared=0,defenseCalls=0;
+ const drop=(actor:Actor)=>{actor.group.removeFromParent();actor.mesh.geometry.dispose();actor.well?.removeFromParent();actor.well?.geometry.dispose();};
+ const localTarget=(v:Vessel,target:THREE.Vector3)=>{v.group.updateWorldMatrix(true,false);return v.group.worldToLocal(target.clone());};
+ const desired=(actor:Actor,target:THREE.Vector3)=>wrap(Math.atan2(target.x-actor.layout.pivot.x,target.z-actor.layout.pivot.z)-actor.layout.home);
+ const worldMuzzle=(actor:Actor)=>{actor.group.updateWorldMatrix(true,false);return actor.group.localToWorld(actor.layout.muzzle.clone().sub(actor.layout.pivot));};
+ function sync(id:string,kind:ShipKind,group:THREE.Group,source:THREE.BufferGeometry,asset:FleetAsset){const prior=vessels.get(id);if(prior?.source===source&&prior.group===group&&prior.asset===asset)return prior.staticGeometry;if(prior&&(prior.group!==group||prior.asset!==asset)){for(const a of prior.actors.values())drop(a);vessels.delete(id);}const existing=vessels.get(id),actors=existing?.actors??new Map<string,Actor>(),pieces=partition(source,asset),list=describe(asset);
+  for(const layout of list){const indices=pieces.actorIndices.get(layout.id)!;let actor=actors.get(layout.id);if(!indices.length){if(actor){drop(actor);actors.delete(layout.id);}continue;}const geometry=subset(source,indices);geometry.translate(-layout.pivot.x,-layout.pivot.y,-layout.pivot.z);if(actor){actor.mesh.geometry.dispose();actor.mesh.geometry=geometry;continue;}
+   const node=new THREE.Group();node.name=`weapon-mount:${id}:${layout.id}`;node.position.copy(layout.pivot);const mesh=new THREE.Mesh(geometry,material);mesh.name=`source-weapon:${layout.id}`;mesh.castShadow=true;mesh.receiveShadow=true;mesh.userData={weaponMount:layout.id,sourcePartIndices:[...layout.parts],shipId:id};node.add(mesh);group.add(node);actor={layout,group:node,mesh,from:0,to:0,elapsed:1,duration:0,closeAt:Infinity,defenseUntil:0};
+   if(layout.lid){const size=layout.lid.getSize(new THREE.Vector3()),wellGeo=new THREE.PlaneGeometry(size.x,size.z);wellGeo.rotateX(-Math.PI/2);wellGeo.translate(layout.muzzle.x,layout.lid.min.y-.001,layout.muzzle.z);const well=new THREE.Mesh(wellGeo,wellMaterial);well.name=`source-vls-well:${layout.id}`;well.visible=false;group.add(well);actor.well=well;}
+   actors.set(layout.id,actor);
+  }
+  const staticGeometry=stripAnimatedMounts(source,kind,asset);vessels.set(id,{kind,group,asset,source,staticGeometry,actors});return staticGeometry;
+ }
+ function prepare(id:string,mode:'gun'|'missile',targetWorld:THREE.Vector3):PreparedWeaponShot|null{const v=vessels.get(id);if(!v)return null;const target=localTarget(v,targetWorld),actors=[...v.actors.values()].filter(a=>a.layout.role===(mode==='gun'?'gun':'lid'));if(!actors.length)return null;
+  if(mode==='missile'){const actor=actors.sort((a,b)=>a.layout.muzzle.distanceToSquared(target)-b.layout.muzzle.distanceToSquared(target))[0];actor.from=actor.group.rotation.z;actor.to=1.65;actor.elapsed=0;actor.duration=.38;actor.closeAt=clock+3;prepared++;return{mountId:actor.layout.id,launchDelay:.42,getMuzzle:()=>{v.group.updateWorldMatrix(true,false);return v.group.localToWorld(actor.layout.muzzle.clone());},fire:()=>{actor.closeAt=clock+.45;}};}
+  const eligible=actors.filter(a=>Math.abs(desired(a,target))<Math.PI*.79),available=eligible.length?eligible:actors;available.sort((a,b)=>Math.abs(wrap(desired(a,target)-a.group.rotation.y))-Math.abs(wrap(desired(b,target)-b.group.rotation.y)));const selected=available[0],delta=Math.abs(wrap(desired(selected,target)-selected.group.rotation.y)),delay=Math.max(.18,Math.min(1.35,delta/2.4+.10));
+  for(const actor of available){actor.from=actor.group.rotation.y;actor.to=actor.from+wrap(desired(actor,target)-actor.from);actor.elapsed=0;actor.duration=delay-.04;}prepared++;return{mountId:selected.layout.id,launchDelay:delay,getMuzzle:()=>worldMuzzle(selected),fire:()=>{}};
+ }
+ function defense(id:string,targetWorld:THREE.Vector3,duration=.28){const v=vessels.get(id);if(!v)return null;const target=localTarget(v,targetWorld),actors=[...v.actors.values()].filter(a=>a.layout.role==='ciws');if(!actors.length)return null;const actor=actors.sort((a,b)=>a.layout.pivot.distanceToSquared(target)-b.layout.pivot.distanceToSquared(target))[0];actor.to=actor.group.rotation.y+wrap(desired(actor,target)-actor.group.rotation.y);actor.defenseUntil=clock+Math.max(.08,duration);defenseCalls++;return{mountId:actor.layout.id,getMuzzle:()=>worldMuzzle(actor)};}
+ function defenseAll(id:string,targetWorld:THREE.Vector3,duration=.28){const v=vessels.get(id);if(!v)return [];const target=localTarget(v,targetWorld);return [...v.actors.values()].filter(a=>a.layout.role==='ciws').map(actor=>{actor.to=actor.group.rotation.y+wrap(desired(actor,target)-actor.group.rotation.y);actor.defenseUntil=clock+Math.max(.08,duration);defenseCalls++;return{id:`${id}:${actor.layout.id}`,muzzle:worldMuzzle(actor)};});}
+ function update(dt:number,time:number){clock=time;for(const v of vessels.values())for(const a of v.actors.values()){
+  if(a.layout.role==='ciws'){if(clock<=a.defenseUntil)a.group.rotation.y+=wrap(a.to-a.group.rotation.y)*(1-Math.exp(-Math.max(0,dt)*28));continue;}
+  if(a.layout.role==='lid'&&clock>=a.closeAt){a.from=a.group.rotation.z;a.to=0;a.elapsed=0;a.duration=.55;a.closeAt=Infinity;}
+  a.elapsed=Math.min(a.duration,a.elapsed+Math.max(0,dt));const q=a.duration?THREE.MathUtils.smoothstep(a.elapsed/a.duration,0,1):1,value=THREE.MathUtils.lerp(a.from,a.to,q);if(a.layout.role==='lid'){a.group.rotation.z=value;if(a.well)a.well.visible=value>.04;}else a.group.rotation.y=value;
+ }}
+ function remove(id:string){const v=vessels.get(id);if(!v)return;for(const a of v.actors.values()){a.well?.removeFromParent();drop(a);}vessels.delete(id);}
+ const clear=()=>{for(const id of [...vessels.keys()])remove(id);};
+ return{sync,prepare,defense,defenseAll,update,remove,clear,diagnostics:()=>({prepared,defenseCalls,vessels:[...vessels].map(([id,v])=>({id,kind:v.kind,sourceTriangles:(v.source.index?.count??v.source.getAttribute('position').count)/3,staticTriangles:v.staticGeometry.getAttribute('position').count/3,mounts:[...v.actors.values()].map(a=>({id:a.layout.id,role:a.layout.role,sourceParts:[...a.layout.parts],triangles:a.mesh.geometry.getAttribute('position').count/3,pivot:a.layout.pivot.toArray(),muzzle:(a.layout.role==='lid'?(v.group.updateWorldMatrix(true,false),v.group.localToWorld(a.layout.muzzle.clone())):worldMuzzle(a)).toArray(),yaw:a.group.rotation.y,opening:a.group.rotation.z}))}))}),dispose(){clear();wellMaterial.dispose();}};
+}

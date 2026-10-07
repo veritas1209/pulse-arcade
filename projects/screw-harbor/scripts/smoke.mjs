@@ -1,0 +1,15 @@
+import { chromium } from '@playwright/test';
+import { mkdir,writeFile } from 'node:fs/promises';
+const browser=await chromium.launch({channel:'chrome',headless:true});
+await mkdir('artifacts',{recursive:true});
+const page=await browser.newPage({viewport:{width:1440,height:1000}});
+const errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
+await page.goto('http://127.0.0.1:4188/?qa=1');
+await page.waitForFunction(()=>window.__SCREW_HARBOR__);
+await page.waitForTimeout(700);
+await page.screenshot({path:'artifacts/desktop.png'});
+console.log(JSON.stringify({errors,diagnostics:await page.evaluate(()=>window.__SCREW_HARBOR__.getDiagnostics()),layout:await page.evaluate(()=>({width:innerWidth,height:innerHeight,scrollWidth:document.documentElement.scrollWidth,scrollHeight:document.documentElement.scrollHeight}))}));
+await page.evaluate(()=>window.__SCREW_HARBOR__.loadStage(10));await page.waitForTimeout(500);await page.screenshot({path:'artifacts/liner.png'});
+await page.setViewportSize({width:390,height:844});await page.evaluate(()=>window.__SCREW_HARBOR__.loadStage(0));await page.waitForTimeout(500);await page.screenshot({path:'artifacts/mobile.png'});
+console.log(JSON.stringify({mobile:await page.evaluate(()=>({height:innerHeight,scrollHeight:document.documentElement.scrollHeight,width:innerWidth,scrollWidth:document.documentElement.scrollWidth,diagnostics:window.__SCREW_HARBOR__.getDiagnostics()}))}));
+await writeFile('artifacts/smoke-errors.json',JSON.stringify(errors,null,2));await browser.close();

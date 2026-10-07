@@ -1,0 +1,607 @@
+{
+  "contacts": [
+    {
+      "position": [
+        -45.146895625774725,
+        0.46,
+        -52.66481395425529
+      ],
+      "target": [
+        -45.99972462000208,
+        0.23455802889986788,
+        -53.99967672782853
+      ],
+      "distance": 1.5999999999999994,
+      "minDistance": 1.6,
+      "maxDistance": 205,
+      "screenSpacePanning": true,
+      "collisions": 2,
+      "lastObstacle": "sea-slide",
+      "seaClearance": 0,
+      "sweepRadius": 0.22,
+      "navigationFloor": 8,
+      "effectivePanDistance": 8,
+      "lastWheelStep": 23.345402456649825,
+      "middleMouse": "pan"
+    },
+    {
+      "position": [
+        -45.89687624045569,
+        1.5892855773492902,
+        -53.83858926184392
+      ],
+      "target": [
+        -45.999999070443835,
+        0.0007917599831042122,
+        -53.99999890878188
+      ],
+      "distance": 1.5999999999999999,
+      "minDistance": 1.6,
+      "maxDistance": 205,
+      "screenSpacePanning": true,
+      "collisions": 2,
+      "lastObstacle": "sea-slide",
+      "seaClearance": 1.1292855773492902,
+      "sweepRadius": 0.22,
+      "navigationFloor": 8,
+      "effectivePanDistance": 8,
+      "lastWheelStep": 23.320655914331752,
+      "middleMouse": "pan"
+    },
+    {
+      "position": [
+        -25.97690325826601,
+        6.639461077273207,
+        -12.849490166154887
+      ],
+      "target": [
+        -26.45423363905994,
+        -0.713288637017681,
+        -13.596615979571459
+      ],
+      "distance": 7.406009022037915,
+      "minDistance": 1.6,
+      "maxDistance": 205,
+      "screenSpacePanning": true,
+      "collisions": 3,
+      "lastObstacle": "visible-mesh",
+      "seaClearance": 6.179461077273207,
+      "sweepRadius": 0.22,
+      "navigationFloor": 8,
+      "effectivePanDistance": 8,
+      "lastWheelStep": 23.37265615927908,
+      "middleMouse": "pan"
+    }
+  ],
+  "samples": [
+    {
+      "position": [
+        -18.56745275634313,
+        4.9593281055758816,
+        -10.341607232335756
+      ],
+      "target": [
+        -18.98851019583533,
+        -1.5265988173595222,
+        -11.000653659367021
+      ],
+      "distance": 6.532907439264139,
+      "minDistance": 1.6,
+      "maxDistance": 205,
+      "screenSpacePanning": true,
+      "collisions": 4,
+      "lastObstacle": "visible-mesh",
+      "seaClearance": 4.499328105575882,
+      "sweepRadius": 0.22,
+      "navigationFloor": 8,
+      "effectivePanDistance": 8,
+      "lastWheelStep": 5.806009022037914,
+      "middleMouse": "pan"
+    },
+    {
+      "position": [
+        79.21036526450334,
+        174.02378912445906,
+        16.206620051863155
+      ],
+      "target": [
+        65.99775267227227,
+        -29.50198122558353,
+        -4.473990962063514
+      ],
+      "distance": 205,
+      "minDistance": 1.6,
+      "maxDistance": 205,
+      "screenSpacePanning": true,
+      "collisions": 4,
+      "lastObstacle": "visible-mesh",
+      "seaClearance": 173.56378912445905,
+      "sweepRadius": 0.22,
+      "navigationFloor": 8,
+      "effectivePanDistance": 205,
+      "lastWheelStep": -198.46709256073586,
+      "middleMouse": "pan"
+    },
+    {
+      "position": [
+        276.77798194690524,
+        0.46,
+        79.11377724260348
+      ],
+      "target": [
+        276.6748591169171,
+        -1.128493817366186,
+        78.9523675956655
+      ],
+      "distance": 1.6,
+      "minDistance": 1.6,
+      "maxDistance": 205,
+      "screenSpacePanning": true,
+      "collisions": 26,
+      "lastObstacle": "sea-slide",
+      "seaClearance": 0,
+      "sweepRadius": 0.22,
+      "navigationFloor": 8,
+      "effectivePanDistance": 8,
+      "lastWheelStep": 203.4,
+      "middleMouse": "pan"
+    },
+    {
+      "position": [
+        386.2251064070032,
+        173.3845917473653,
+        111.963727974086
+      ],
+      "target": [
+        373.01249381477305,
+        -30.14117860267728,
+        91.28311696015874
+      ],
+      "distance": 205,
+      "minDistance": 1.6,
+      "maxDistance": 205,
+      "screenSpacePanning": true,
+      "collisions": 46,
+      "lastObstacle": "sea-slide",
+      "seaClearance": 172.9245917473653,
+      "sweepRadius": 0.22,
+      "navigationFloor": 8,
+      "effectivePanDistance": 205,
+      "lastWheelStep": -203.4,
+      "middleMouse": "pan"
+    },
+    {
+      "position": [
+        583.2643488015124,
+        0.46,
+        174.5548664091396
+      ],
+      "target": [
+        583.1612259715242,
+        -1.128493817366186,
+        174.39345676220165
+      ],
+      "distance": 1.5999999999999985,
+      "minDistance": 1.6,
+      "maxDistance": 205,
+      "screenSpacePanning": true,
+      "collisions": 67,
+      "lastObstacle": "sea-slide",
+      "seaClearance": 0,
+      "sweepRadius": 0.22,
+      "navigationFloor": 8,
+      "effectivePanDistance": 8,
+      "lastWheelStep": 203.4,
+      "middleMouse": "pan"
+    },
+    {
+      "position": [
+        693.5515784229104,
+        173.36788117448967,
+        207.92207571835903
+      ],
+      "target": [
+        680.3389658306795,
+        -30.157889175552928,
+        187.24146470443227
+      ],
+      "distance": 205,
+      "minDistance": 1.6,
+      "maxDistance": 205,
+      "screenSpacePanning": true,
+      "collisions": 87,
+      "lastObstacle": "sea-slide",
+      "seaClearance": 172.90788117448966,
+      "sweepRadius": 0.22,
+      "navigationFloor": 8,
+      "effectivePanDistance": 205,
+      "lastWheelStep": -203.4,
+      "middleMouse": "pan"
+    }
+  ],
+  "previewSamples": [
+    {
+      "position": [
+        0.028019749756802572,
+        -4.711858304312401,
+        0.040951941952249916
+      ],
+      "target": [
+        0,
+        0.25,
+        0
+      ],
+      "distance": 4.962106407565242,
+      "minDistance": 1.1,
+      "maxDistance": 6,
+      "collisions": 0,
+      "lastObstacle": "none",
+      "seaClearance": null,
+      "sweepRadius": 0.22,
+      "navigationFloor": 3,
+      "effectivePanDistance": 4.962106407565242,
+      "lastWheelStep": 0,
+      "middleMouse": "pan"
+    },
+    {
+      "position": [
+        -0.11360442949799048,
+        -1.016525770477136,
+        -0.44284964272629346
+      ],
+      "target": [
+        -0.11981584904463542,
+        0.08341922998119569,
+        -0.4519278712944668
+      ],
+      "distance": 1.0999999999999999,
+      "minDistance": 1.1,
+      "maxDistance": 6,
+      "collisions": 0,
+      "lastObstacle": "none",
+      "seaClearance": null,
+      "sweepRadius": 0.22,
+      "navigationFloor": 3,
+      "effectivePanDistance": 3,
+      "lastWheelStep": 3.862106407565243,
+      "middleMouse": "pan"
+    },
+    {
+      "position": [
+        -0.12169569386299522,
+        -5.794549714587978,
+        0.920426434492763
+      ],
+      "target": [
+        -0.15557616411742212,
+        0.20515028791201412,
+        0.8709088241209082
+      ],
+      "distance": 6.000000000000001,
+      "minDistance": 1.1,
+      "maxDistance": 6,
+      "collisions": 0,
+      "lastObstacle": "none",
+      "seaClearance": null,
+      "sweepRadius": 0.22,
+      "navigationFloor": 3,
+      "effectivePanDistance": 6.000000000000001,
+      "lastWheelStep": -4.9,
+      "middleMouse": "pan"
+    },
+    {
+      "position": [
+        -0.30773963714927655,
+        -1.1039652827141302,
+        0.574700090092606
+      ],
+      "target": [
+        -0.31395105669592144,
+        -0.004020282255798525,
+        0.5656218615244326
+      ],
+      "distance": 1.0999999999999999,
+      "minDistance": 1.1,
+      "maxDistance": 6,
+      "collisions": 0,
+      "lastObstacle": "none",
+      "seaClearance": null,
+      "sweepRadius": 0.22,
+      "navigationFloor": 3,
+      "effectivePanDistance": 3,
+      "lastWheelStep": 4.9,
+      "middleMouse": "pan"
+    },
+    {
+      "position": [
+        -0.33229373773187515,
+        -5.882870032278255,
+        1.8425192215504558
+      ],
+      "target": [
+        -0.36617420798630185,
+        0.116829970221737,
+        1.793001611178601
+      ],
+      "distance": 6.000000000000001,
+      "minDistance": 1.1,
+      "maxDistance": 6,
+      "collisions": 0,
+      "lastObstacle": "none",
+      "seaClearance": null,
+      "sweepRadius": 0.22,
+      "navigationFloor": 3,
+      "effectivePanDistance": 6.000000000000001,
+      "lastWheelStep": -4.9,
+      "middleMouse": "pan"
+    }
+  ],
+  "hidden": {
+    "visible": false,
+    "damageMarks": 0,
+    "modelScale": [
+      1,
+      1,
+      1
+    ],
+    "camera": {
+      "position": [
+        -0.33229373773187515,
+        -5.882870032278255,
+        1.8425192215504558
+      ],
+      "target": [
+        -0.36617420798630185,
+        0.116829970221737,
+        1.793001611178601
+      ],
+      "distance": 6.000000000000001,
+      "minDistance": 1.1,
+      "maxDistance": 6,
+      "collisions": 0,
+      "lastObstacle": "none",
+      "seaClearance": null,
+      "sweepRadius": 0.22,
+      "navigationFloor": 3,
+      "effectivePanDistance": 6.000000000000001,
+      "lastWheelStep": -4.9,
+      "middleMouse": "pan"
+    },
+    "renderer": {
+      "calls": 2,
+      "triangles": 50456,
+      "geometries": 3,
+      "textures": 5
+    },
+    "projectiles": [],
+    "airbursts": 0,
+    "waterRings": 0,
+    "persistentEmitters": 0,
+    "fireEmitters": [],
+    "particles": 0,
+    "debris": 0
+  },
+  "clicks": [],
+  "final": {
+    "renderer": {
+      "calls": 3,
+      "triangles": 42432,
+      "geometries": 24,
+      "textures": 11
+    },
+    "calls": 3,
+    "triangles": 42432,
+    "geometries": 24,
+    "textures": 11,
+    "dpr": 1,
+    "postPasses": 0,
+    "geometryCache": 6,
+    "surfacePointCache": 1,
+    "shadowLights": 1,
+    "shadowMap": 1024,
+    "boardSize": 30,
+    "camera": {
+      "position": [
+        693.6723317372891,
+        173.34049554677756,
+        208.11444016115973
+      ],
+      "target": [
+        680.4597191450582,
+        -30.185274803265017,
+        187.43382914723298
+      ],
+      "distance": 205,
+      "minDistance": 1.6,
+      "maxDistance": 205,
+      "screenSpacePanning": true,
+      "collisions": 87,
+      "lastObstacle": "sea-slide",
+      "seaClearance": 172.88049554677755,
+      "sweepRadius": 0.22,
+      "navigationFloor": 8,
+      "effectivePanDistance": 205,
+      "lastWheelStep": -203.4,
+      "middleMouse": "pan"
+    },
+    "selectedCellOutline": {
+      "x": 3,
+      "z": 1
+    },
+    "damageMarks": {
+      "0-carrier": [
+        {
+          "x": 0.1,
+          "z": -0.22,
+          "seed": 1937
+        }
+      ],
+      "0-destroyer-1": [],
+      "0-destroyer-2": [],
+      "0-battleship-1": [],
+      "0-battleship-2": []
+    },
+    "visibleShips": [
+      "0-carrier",
+      "0-destroyer-1",
+      "0-destroyer-2",
+      "0-battleship-1",
+      "0-battleship-2"
+    ],
+    "highDetailShips": 0,
+    "movingShips": 0,
+    "burningShips": 1,
+    "waterline": {
+      "0-carrier": {
+        "shipY": 0.05351285554480274,
+        "waterY": 0.01513876742427987,
+        "lift": 0.03837408812052287
+      },
+      "0-destroyer-1": {
+        "shipY": 0.0683831605604485,
+        "waterY": 0.02896548456336728,
+        "lift": 0.03941767599708122
+      },
+      "0-destroyer-2": {
+        "shipY": 0.05641431735972165,
+        "waterY": 0.026813853228021507,
+        "lift": 0.02960046413170014
+      },
+      "0-battleship-1": {
+        "shipY": 0.0033762508184036095,
+        "waterY": -0.025663495100550368,
+        "lift": 0.029039745918953978
+      },
+      "0-battleship-2": {
+        "shipY": -0.020047558941178427,
+        "waterY": -0.05659691066980153,
+        "lift": 0.0365493517286231
+      }
+    },
+    "shipPositions": {
+      "0-carrier": [
+        -46,
+        0.05351285554480274,
+        -54
+      ],
+      "0-destroyer-1": [
+        -54,
+        0.0683831605604485,
+        -46
+      ],
+      "0-destroyer-2": [
+        -38,
+        0.05641431735972165,
+        -46
+      ],
+      "0-battleship-1": [
+        -50,
+        0.0033762508184036095,
+        -38
+      ],
+      "0-battleship-2": [
+        -42,
+        -0.020047558941178427,
+        -38
+      ]
+    },
+    "reconFighters": 1,
+    "reconModel": {
+      "name": "F-22 Raptor",
+      "length": 0.5,
+      "span": 0.36,
+      "triangles": 856
+    },
+    "islandCells": 90,
+    "islandTrees": 60,
+    "islandRocks": 29,
+    "reachableTiles": 0,
+    "deploymentTiles": 0,
+    "reconPreviewCells": 0,
+    "assets": {
+      "carrier": {
+        "sourceSize": [
+          13.349999952316285,
+          12.07000000178814,
+          43.69325356185436
+        ],
+        "fittedSize": [
+          1.0999410152435303,
+          0.9944784250110388,
+          3.6000001430511475
+        ],
+        "uniformScale": 0.0823925825277273,
+        "triangles": 45660,
+        "lowTriangles": 5248
+      },
+      "battleship": {
+        "sourceSize": [
+          8.094999999701976,
+          13.57000000178814,
+          43.69325356185436
+        ],
+        "fittedSize": [
+          0.6021238565444946,
+          1.0093662878498435,
+          3.25
+        ],
+        "uniformScale": 0.0743821925597538,
+        "triangles": 49004,
+        "lowTriangles": 5076
+      },
+      "destroyer": {
+        "sourceSize": [
+          6.394999999701977,
+          12.42000000178814,
+          37.69325356185436
+        ],
+        "fittedSize": [
+          0.4920111298561096,
+          0.9555556250270456,
+          2.9000000953674316
+        ],
+        "uniformScale": 0.07693684481869204,
+        "triangles": 40984,
+        "lowTriangles": 5680
+      }
+    },
+    "projectiles": [],
+    "airbursts": 0,
+    "waterRings": 0,
+    "persistentEmitters": 1,
+    "fireEmitters": [
+      {
+        "position": [
+          -46.054997050762175,
+          0.4377200880200835,
+          -53.60399998426438
+        ],
+        "scale": 0.0694,
+        "strength": 0.7,
+        "flameHeight": 0.22832599999999997,
+        "maxFlameWidth": 0.23249000000000003,
+        "smokeHeight": 0.56214
+      }
+    ],
+    "particles": 15,
+    "debris": 0
+  },
+  "errors": [],
+  "authoredCarrierSweep": {
+    "position": [
+      0,
+      0.38000000000000017,
+      1.8940832328796389
+    ],
+    "target": [
+      0,
+      0.38,
+      0
+    ],
+    "distance": 1.8940832328796389,
+    "collisions": 1,
+    "lastObstacle": "authored-carrier",
+    "seaClearance": null,
+    "sweepRadius": 0.22
+  }
+}

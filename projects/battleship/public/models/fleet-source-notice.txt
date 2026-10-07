@@ -1,0 +1,25 @@
+Battleship external fleet asset credits
+
+Gerald Ford Aircraft Carrier — Usman Zia / Uxxman
+Source: https://sketchfab.com/3d-models/gerald-ford-aircraft-carrier-324120997379466caad30917911bcd8b
+License: CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+Public redistribution: https://huggingface.co/datasets/allenai/objaverse/resolve/main/glbs/000-113/324120997379466caad30917911bcd8b.glb
+Source SHA256: 9baf4026165456af56eea3fd50fa52da356dde0266fe6d7249ef7f6d675ed503
+Changes: uniform 332.85m physical scaling, coordinate conversion, preserved source face-corner UV/normal seams, original colour/PBR/normal atlases, semantic segmentation, attached rails/windows/CIWS, hull-fitted internal decks/rooms and destruction integration.
+
+USS BB-61 Iowa 1984 - user-supplied asset
+Source: attached uss-iowa.zip / source/USS+BB-61+Iowa+1984+2.glb
+Author/source URL/license: not included in ZIP or embedded GLB metadata; no license inferred.
+Embedded generator: gltfpack 0.15
+Source SHA256: d751accd7d536a598df232cbfcfa78acb8aff9b7b3df186970c7b5ebcbcce8da
+Changes: original node transforms, mirrored winding correction, one uniform physical scale, source Y=0 waterline, source indexed UV/normal/color tuples, original image atlas with radar/fence alpha cutouts, source-index distance LODs, source-derived tactical regions, hull-fitted internal decks/rooms and destruction integration. Offline canonical source retained in artifacts/external-assets/us-fleet/iowa-1984.
+
+USS Arleigh Burke DDG-51 missile destroyer — WTigerTw / Yi Tsung Lee
+Source: https://sketchfab.com/3d-models/11-low-poly-us-navy-ddg-51-uss-arleigh-burke-17be09c31c6047e4a5969b68c29eba03
+License: CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+Public redistribution: https://huggingface.co/datasets/allenai/objaverse/resolve/main/glbs/000-144/17be09c31c6047e4a5969b68c29eba03.glb
+Source SHA256: 3c145961043ecae949818ab30fcf3973ec9f01e0bac045305d8a7d5e1094bab7
+Changes: uniform 153.92m scaling, coordinate conversion, padded source-colour/PBR/normal atlases retaining face-corner UVs and normals, physical connected-component and system segmentation, stable LOD, interiors and destruction integration.
+
+Public dataset: Objaverse / Allen Institute for AI. Individual model licenses above govern use.
+https://huggingface.co/datasets/allenai/objaverse

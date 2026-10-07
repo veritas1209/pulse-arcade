@@ -1,0 +1,210 @@
+{
+  "overview": {
+    "frame": 240,
+    "elapsed": 5.280100000000004,
+    "score": 0,
+    "targetScore": 5,
+    "complete": false,
+    "state": "setup",
+    "player": {
+      "position": {
+        "x": 14,
+        "y": 0,
+        "z": 2
+      },
+      "speed": 0
+    },
+    "canvas": {
+      "clientWidth": 1440,
+      "clientHeight": 960,
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "renderer": {
+      "calls": 23,
+      "triangles": 85970,
+      "geometries": 21,
+      "textures": 10
+    },
+    "calls": 23,
+    "triangles": 85970,
+    "geometries": 21,
+    "textures": 10,
+    "dpr": 1,
+    "postPasses": 0,
+    "shadowLights": 1,
+    "shadowMap": 1024,
+    "boardSize": 30,
+    "visibleShips": [
+      "0-carrier",
+      "0-destroyer-1",
+      "0-destroyer-2",
+      "0-battleship-1",
+      "0-battleship-2"
+    ],
+    "highDetailShips": 0,
+    "reconFighters": 0,
+    "islandCells": 90,
+    "islandTrees": 54,
+    "islandRocks": 29,
+    "reachableTiles": 0,
+    "reconPreviewCells": 0,
+    "assets": {
+      "carrier": {
+        "sourceSize": [
+          13.349999952316285,
+          12.07000000178814,
+          43.69325356185436
+        ],
+        "fittedSize": [
+          1.0999410152435303,
+          0.9944784250110388,
+          3.6000001430511475
+        ],
+        "uniformScale": 0.0823925825277273,
+        "triangles": 45660,
+        "lowTriangles": 5248
+      },
+      "battleship": {
+        "sourceSize": [
+          8.094999999701976,
+          13.57000000178814,
+          43.69325356185436
+        ],
+        "fittedSize": [
+          0.6021238565444946,
+          1.0093662878498435,
+          3.25
+        ],
+        "uniformScale": 0.0743821925597538,
+        "triangles": 49004,
+        "lowTriangles": 5076
+      },
+      "destroyer": {
+        "sourceSize": [
+          6.394999999701977,
+          12.42000000178814,
+          37.69325356185436
+        ],
+        "fittedSize": [
+          0.4920111298561096,
+          0.9555556250270456,
+          2.9000000953674316
+        ],
+        "uniformScale": 0.07693684481869204,
+        "triangles": 40984,
+        "lowTriangles": 5680
+      }
+    },
+    "persistentEmitters": 0,
+    "particles": 0,
+    "debris": 0
+  },
+  "close": {
+    "frame": 480,
+    "elapsed": 9.361300000000004,
+    "score": 0,
+    "targetScore": 5,
+    "complete": false,
+    "state": "battle",
+    "player": {
+      "position": {
+        "x": 14,
+        "y": 0,
+        "z": 2
+      },
+      "speed": 0
+    },
+    "canvas": {
+      "clientWidth": 1440,
+      "clientHeight": 960,
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "renderer": {
+      "calls": 25,
+      "triangles": 118830,
+      "geometries": 23,
+      "textures": 10
+    },
+    "calls": 25,
+    "triangles": 118830,
+    "geometries": 23,
+    "textures": 10,
+    "dpr": 1,
+    "postPasses": 0,
+    "shadowLights": 1,
+    "shadowMap": 1024,
+    "boardSize": 30,
+    "visibleShips": [
+      "0-carrier",
+      "0-destroyer-1",
+      "0-destroyer-2",
+      "0-battleship-1",
+      "0-battleship-2",
+      "1-battleship-1"
+    ],
+    "highDetailShips": 0,
+    "reconFighters": 1,
+    "islandCells": 90,
+    "islandTrees": 54,
+    "islandRocks": 29,
+    "reachableTiles": 0,
+    "reconPreviewCells": 0,
+    "assets": {
+      "carrier": {
+        "sourceSize": [
+          13.349999952316285,
+          12.07000000178814,
+          43.69325356185436
+        ],
+        "fittedSize": [
+          1.0999410152435303,
+          0.9944784250110388,
+          3.6000001430511475
+        ],
+        "uniformScale": 0.0823925825277273,
+        "triangles": 45660,
+        "lowTriangles": 5248
+      },
+      "battleship": {
+        "sourceSize": [
+          8.094999999701976,
+          13.57000000178814,
+          43.69325356185436
+        ],
+        "fittedSize": [
+          0.6021238565444946,
+          1.0093662878498435,
+          3.25
+        ],
+        "uniformScale": 0.0743821925597538,
+        "triangles": 49004,
+        "lowTriangles": 5076
+      },
+      "destroyer": {
+        "sourceSize": [
+          6.394999999701977,
+          12.42000000178814,
+          37.69325356185436
+        ],
+        "fittedSize": [
+          0.4920111298561096,
+          0.9555556250270456,
+          2.9000000953674316
+        ],
+        "uniformScale": 0.07693684481869204,
+        "triangles": 40984,
+        "lowTriangles": 5680
+      }
+    },
+    "persistentEmitters": 2,
+    "particles": 30,
+    "debris": 0
+  },
+  "errors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+}

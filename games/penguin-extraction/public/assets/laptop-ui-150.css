@@ -1,0 +1,13 @@
+@media(max-height:740px) and (min-width:1151px){
+  #app:not(.in-raid) .ping-badge{
+    top:85px;
+    right:calc(4.5% + 312px);
+  }
+}
+
+@media(max-height:740px) and (min-width:761px) and (max-width:1150px){
+  #app:not(.in-raid) .ping-badge{
+    top:85px;
+    right:calc(3% + 282px);
+  }
+}

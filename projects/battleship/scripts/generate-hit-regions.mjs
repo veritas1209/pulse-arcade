@@ -1,0 +1,31 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {transpileQaModule} from './transpile-qa-modules.mjs';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const out=path.join(root,'artifacts/hit-region-tool');
+transpileQaModule(path.join(root,'src/naval/fleet.ts'),path.join(out,'fleet.mjs'));
+const {buildFleetAssets}=await import('../artifacts/hit-region-tool/fleet.mjs');
+const report=JSON.parse(fs.readFileSync(path.join(root,'artifacts/external-assets/fleet-conversion-report.json'),'utf8'));
+const assets=buildFleetAssets(),weapons={},systems={},provenance={};
+const allowed={carrier:['bridge','radar','engine','airDefense'],destroyer:['bridge','radar','engine','airDefense'],battleship:['bridge','radar','engine']};
+for(const [kind,a]of Object.entries(assets)){
+ const sourceIds=new Set(report[kind].parts.map(p=>p.id));
+ const region=p=>({id:p.id,x0:p.bounds.min.x/(a.fittedSize[0]/2),x1:p.bounds.max.x/(a.fittedSize[0]/2),z0:p.bounds.min.z/(a.fittedSize[2]/2),z1:p.bounds.max.z/(a.fittedSize[2]/2)});
+ weapons[kind]=a.parts.filter(p=>p.system==='weapon').map(region);
+ systems[kind]=a.parts.filter(p=>sourceIds.has(p.id)&&allowed[kind].includes(p.system)).map(p=>({...region(p),system:p.system})).filter(r=>r.system!=='radar'||(r.x1-r.x0)*(r.z1-r.z0)<=.12&&(r.z1-r.z0)<=.4&&(r.x1-r.x0)<=.8);
+ systems[kind].sort((a,b)=>(a.x1-a.x0)*(a.z1-a.z0)-(b.x1-b.x0)*(b.z1-b.z0)||a.id.localeCompare(b.id));
+ provenance[kind]={fittedSize:a.fittedSize,weapons:weapons[kind].length,systems:systems[kind].length,parts:a.parts.filter(p=>sourceIds.has(p.id)).map(p=>({id:p.id,system:p.system,bounds:[p.bounds.min.toArray(),p.bounds.max.toArray()]}))};
+ for(const sector of a.sectors)for(const geometry of Object.values(sector))geometry.dispose();
+}
+const tsFile=path.join(root,'src/parts.ts'),pyFile=path.join(root,'server/battleship_rooms.py');
+let ts=fs.readFileSync(tsFile,'utf8');
+const block=/\/\*\* (?:Normalized source-authored attachment|Source attachment) footprints[^]*?(?=\/\*\* Model bow)/;
+if(!block.test(ts))throw new Error('Source region declaration block missing');
+ts=ts.replace(block,`/** Source attachment footprints normalized by the actual runtime fitted bounds. */\nexport const WEAPON_REGIONS:Record<ShipKind,WeaponRegion[]>=${JSON.stringify(weapons)};\nexport interface SystemRegion extends WeaponRegion {system:PartId}\nexport const SYSTEM_REGIONS:Record<ShipKind,SystemRegion[]>=${JSON.stringify(systems)};\n`);
+fs.writeFileSync(tsFile,ts);
+let py=fs.readFileSync(pyFile,'utf8');
+py=py.replace(/WEAPON_REGIONS=[^]*?(?=\r?\ndef create_parts)/,`WEAPON_REGIONS=${JSON.stringify(weapons)}\nSYSTEM_REGIONS=${JSON.stringify(systems)}\n`);
+fs.writeFileSync(pyFile,py);
+fs.writeFileSync(path.join(out,'region-source.json'),JSON.stringify(provenance,null,2));
+console.log(JSON.stringify(Object.fromEntries(Object.entries(provenance).map(([kind,p])=>[kind,{fittedSize:p.fittedSize,weapons:p.weapons,systems:p.systems}]))));

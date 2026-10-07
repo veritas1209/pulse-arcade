@@ -1,0 +1,769 @@
+{
+  "license": "Per-source CC0-1.0 / CC-BY-4.0; see LICENSE.txt",
+  "verified": "2026-10-02",
+  "sources": [
+    {
+      "file": "cannon.mp3",
+      "page": "https://freesound.org/people/SamsterBirdies/sounds/621000/",
+      "url": "https://cdn.freesound.org/previews/621/621000_5487341-hq.mp3",
+      "sha256": "99a758ee0592e3b932da1379ff43da16c9f9e7ae63a837c628bb44f3b69f8f19",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "file": "ship-engine.mp3",
+      "page": "https://freesound.org/people/monotraum/sounds/253606/",
+      "url": "https://cdn.freesound.org/previews/253/253606_1756543-hq.mp3",
+      "sha256": "98ce87a3b2766433960d6bfc6a3f4db47c8e579b33f9e71189ba93a02f16b29a",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "file": "splash.mp3",
+      "page": "https://freesound.org/people/felix.blume/sounds/434978/",
+      "url": "https://cdn.freesound.org/previews/434/434978_1661766-hq.mp3",
+      "sha256": "47db85ab1f917190ac327113e2c5e615d7026516e7552be1f2a42208caff9066",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "file": "fire.mp3",
+      "page": "https://freesound.org/people/ceich93/sounds/263864/",
+      "url": "https://cdn.freesound.org/previews/263/263864_4457609-hq.mp3",
+      "sha256": "c9cec454ebee43c20fd185948e42ea8fbde9479af8661043635fe219e1217242",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "file": "metal.mp3",
+      "page": "https://freesound.org/people/RyanKingArt/sounds/620077/",
+      "url": "https://cdn.freesound.org/previews/620/620077_11069322-hq.mp3",
+      "sha256": "7e402e1a3c7394e3039746063b8ccb96a065bbdde229ed39f0278f347ebf2d19",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "file": "jet.mp3",
+      "page": "https://freesound.org/people/Sandermotions/sounds/275990/",
+      "url": "https://cdn.freesound.org/previews/275/275990_1402315-hq.mp3",
+      "sha256": "8f477bc737c299906e61ea92d0c6dddba724adb6a5d3cd6108516e1ecadb7248",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "file": "ocean.mp3",
+      "page": "https://freesound.org/people/esh9419/sounds/417797/",
+      "url": "https://cdn.freesound.org/previews/417/417797_3285887-hq.mp3",
+      "sha256": "a9865a6b05163a691bc29fe3d559533d2e147c6066b25f515a764e19b980363a",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "file": "rocket.mp3",
+      "creator": "qubodup",
+      "page": "https://freesound.org/people/qubodup/sounds/211617/",
+      "url": "https://cdn.freesound.org/previews/211/211617_71257-hq.mp3",
+      "sha256": "3e9ad4728c93cbde7228b94c9de4e775cebb5d187d4df991d2ee65aea301b3eb",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "file": "hull.mp3",
+      "creator": "Lewooz",
+      "page": "https://freesound.org/people/Lewooz/sounds/514306/",
+      "url": "https://cdn.freesound.org/previews/514/514306_4984902-hq.mp3",
+      "sha256": "4c23067ee6779f2625ace661eff96501f0834f1ec1cbc3f3974bd8d04c6dd4f4",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "file": "bubbles.mp3",
+      "creator": "gkillhour",
+      "page": "https://freesound.org/people/gkillhour/sounds/267223/",
+      "url": "https://cdn.freesound.org/previews/267/267223_3112522-hq.mp3",
+      "sha256": "7a3e619d2635351a0672db9e5560fdcc9ec2541082fd7c33344b024c2d0f2358",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "file": "sonar.mp3",
+      "creator": "Breviceps",
+      "page": "https://freesound.org/people/Breviceps/sounds/493162/",
+      "url": "https://cdn.freesound.org/previews/493/493162_9159316-hq.mp3",
+      "sha256": "1388f243fe6639150a2b78d51763883db17412acceea9eb74502b76d21d6a268",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  ],
+  "derivatives": [
+    {
+      "file": "sonar-ping.wav",
+      "bytes": 140844,
+      "sha256": "660c9e57dfe3afa66615baf605c57279c6708d6d00da0ec5754c63c9ef74fc68",
+      "duration": 2.2,
+      "loop": false,
+      "sampleRate": 32000,
+      "channels": 1,
+      "peak": 0.614146,
+      "rms": 0.07,
+      "gain": 1.685692,
+      "crossfadeSeconds": 0,
+      "layers": [
+        {
+          "source": "sonar.mp3",
+          "offsetSeconds": 0,
+          "playbackRate": 1,
+          "weight": 1,
+          "lowpassHz": 4600,
+          "highpassHz": 480,
+          "delaySeconds": 0
+        }
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "sea-loop.wav",
+      "bytes": 512044,
+      "sha256": "230fd68efee425d612e6bdddbbfabef45070ab53c5e9755eb1b01b5eca461274",
+      "duration": 8.0,
+      "loop": true,
+      "sampleRate": 32000,
+      "channels": 1,
+      "peak": 0.803086,
+      "rms": 0.12,
+      "gain": 17.581975,
+      "crossfadeSeconds": 0.25,
+      "layers": [
+        {
+          "source": "ocean.mp3",
+          "offsetSeconds": 18,
+          "playbackRate": 1,
+          "weight": 1,
+          "lowpassHz": 7500,
+          "highpassHz": 45,
+          "delaySeconds": 0
+        }
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "missile-launch.wav",
+      "bytes": 147244,
+      "sha256": "3952592d6ffc6c8a3402353ea3fce056c1cd737d8c68ea4b35e31ad63ad33a35",
+      "duration": 2.3,
+      "loop": false,
+      "sampleRate": 32000,
+      "channels": 1,
+      "peak": 0.80313,
+      "rms": 0.2,
+      "gain": 1.20325,
+      "crossfadeSeconds": 0,
+      "layers": [
+        {
+          "source": "rocket.mp3",
+          "offsetSeconds": 0,
+          "playbackRate": 1,
+          "weight": 1,
+          "lowpassHz": 8500,
+          "highpassHz": 55,
+          "delaySeconds": 0
+        },
+        {
+          "source": "cannon.mp3",
+          "offsetSeconds": 0,
+          "playbackRate": 1.35,
+          "weight": 0.18,
+          "lowpassHz": 2100,
+          "highpassHz": 35,
+          "delaySeconds": 0
+        }
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "missile-flight-loop.wav",
+      "bytes": 256044,
+      "sha256": "44ff5421279ed56e62bb5a983ec97e6113498c530e730ce571880f4d50be13c8",
+      "duration": 4.0,
+      "loop": true,
+      "sampleRate": 32000,
+      "channels": 1,
+      "peak": 0.628021,
+      "rms": 0.14,
+      "gain": 0.877173,
+      "crossfadeSeconds": 0.25,
+      "layers": [
+        {
+          "source": "rocket.mp3",
+          "offsetSeconds": 2.1,
+          "playbackRate": 1,
+          "weight": 0.85,
+          "lowpassHz": 7100,
+          "highpassHz": 95,
+          "delaySeconds": 0
+        },
+        {
+          "source": "jet.mp3",
+          "offsetSeconds": 18,
+          "playbackRate": 1,
+          "weight": 0.15,
+          "lowpassHz": 5000,
+          "highpassHz": 90,
+          "delaySeconds": 0
+        }
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "cannon-flight-loop.wav",
+      "bytes": 160044,
+      "sha256": "b6776b7ef9725417075b71e680191a09ce25e679a7524e6ab9aa8939c1e3c34e",
+      "duration": 2.5,
+      "loop": true,
+      "sampleRate": 32000,
+      "channels": 1,
+      "peak": 0.769772,
+      "rms": 0.09,
+      "gain": 0.729167,
+      "crossfadeSeconds": 0.25,
+      "layers": [
+        {
+          "source": "jet.mp3",
+          "offsetSeconds": 19,
+          "playbackRate": 1.35,
+          "weight": 1,
+          "lowpassHz": 2300,
+          "highpassHz": 350,
+          "delaySeconds": 0
+        }
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "torpedo-launch.wav",
+      "bytes": 115244,
+      "sha256": "515e10416baf5ff2d2339f7047f5c46cfc8186f41a125d22508c90a03f018864",
+      "duration": 1.8,
+      "loop": false,
+      "sampleRate": 32000,
+      "channels": 1,
+      "peak": 0.814204,
+      "rms": 0.15,
+      "gain": 1.622857,
+      "crossfadeSeconds": 0,
+      "layers": [
+        {
+          "source": "splash.mp3",
+          "offsetSeconds": 0,
+          "playbackRate": 1.18,
+          "weight": 0.65,
+          "lowpassHz": 4300,
+          "highpassHz": 40,
+          "delaySeconds": 0
+        },
+        {
+          "source": "ship-engine.mp3",
+          "offsetSeconds": 7,
+          "playbackRate": 0.88,
+          "weight": 0.22,
+          "lowpassHz": 1800,
+          "highpassHz": 55,
+          "delaySeconds": 0.04
+        },
+        {
+          "source": "bubbles.mp3",
+          "offsetSeconds": 4.8,
+          "playbackRate": 1,
+          "weight": 0.3,
+          "lowpassHz": 2200,
+          "highpassHz": 32,
+          "delaySeconds": 0.1
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "torpedo-flight-loop.wav",
+      "bytes": 320044,
+      "sha256": "30584c62ce64190dea6ace3d6309940ba01887f481f9a9362f11c93f09454b06",
+      "duration": 5.0,
+      "loop": true,
+      "sampleRate": 32000,
+      "channels": 1,
+      "peak": 0.570591,
+      "rms": 0.1,
+      "gain": 1.742239,
+      "crossfadeSeconds": 0.25,
+      "layers": [
+        {
+          "source": "ship-engine.mp3",
+          "offsetSeconds": 10,
+          "playbackRate": 0.87,
+          "weight": 0.3,
+          "lowpassHz": 1100,
+          "highpassHz": 45,
+          "delaySeconds": 0
+        },
+        {
+          "source": "bubbles.mp3",
+          "offsetSeconds": 23.7,
+          "playbackRate": 1,
+          "weight": 0.8,
+          "lowpassHz": 2400,
+          "highpassHz": 40,
+          "delaySeconds": 0
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "air-intercept.wav",
+      "bytes": 92844,
+      "sha256": "21f0273449bc42d2cb085b6491640d672bf91d3f4fcfac00d778eec593e9de05",
+      "duration": 1.45,
+      "loop": false,
+      "sampleRate": 32000,
+      "channels": 1,
+      "peak": 0.88,
+      "rms": 0.089949,
+      "gain": 1.076298,
+      "crossfadeSeconds": 0,
+      "layers": [
+        {
+          "source": "cannon.mp3",
+          "offsetSeconds": 0,
+          "playbackRate": 1.22,
+          "weight": 0.82,
+          "lowpassHz": 8000,
+          "highpassHz": 110,
+          "delaySeconds": 0
+        },
+        {
+          "source": "metal.mp3",
+          "offsetSeconds": 0,
+          "playbackRate": 1.18,
+          "weight": 0.27,
+          "lowpassHz": 6500,
+          "highpassHz": 250,
+          "delaySeconds": 0.07
+        }
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "metal-impact.wav",
+      "bytes": 179244,
+      "sha256": "cd510599e50a4cb4a6e498d69f08a4b16eaf8a7f8bb332510be33e5eb2e149ae",
+      "duration": 2.8,
+      "loop": false,
+      "sampleRate": 32000,
+      "channels": 1,
+      "peak": 0.88,
+      "rms": 0.090331,
+      "gain": 1.220734,
+      "crossfadeSeconds": 0,
+      "layers": [
+        {
+          "source": "cannon.mp3",
+          "offsetSeconds": 0,
+          "playbackRate": 0.74,
+          "weight": 0.68,
+          "lowpassHz": 6100,
+          "highpassHz": 35,
+          "delaySeconds": 0
+        },
+        {
+          "source": "metal.mp3",
+          "offsetSeconds": 0,
+          "playbackRate": 0.86,
+          "weight": 0.45,
+          "lowpassHz": 7000,
+          "highpassHz": 90,
+          "delaySeconds": 0.026
+        },
+        {
+          "source": "hull.mp3",
+          "offsetSeconds": 3.25,
+          "playbackRate": 0.83,
+          "weight": 0.3,
+          "lowpassHz": 3400,
+          "highpassHz": 40,
+          "delaySeconds": 0.07
+        }
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "water-splash.wav",
+      "bytes": 192044,
+      "sha256": "469f7de712be60b77a55c2096955ed6cd53c93f8fce3bd68da1403699f9125df",
+      "duration": 3.0,
+      "loop": false,
+      "sampleRate": 32000,
+      "channels": 1,
+      "peak": 0.88,
+      "rms": 0.137407,
+      "gain": 1.064114,
+      "crossfadeSeconds": 0,
+      "layers": [
+        {
+          "source": "splash.mp3",
+          "offsetSeconds": 0,
+          "playbackRate": 0.85,
+          "weight": 1,
+          "lowpassHz": 8300,
+          "highpassHz": 35,
+          "delaySeconds": 0
+        }
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "battleship-cannon.wav",
+      "bytes": 211244,
+      "sha256": "900c497f4724cdb91c1d8b046266e5372de914b4e00a2364c847b41bd6b2d7f4",
+      "duration": 3.3,
+      "loop": false,
+      "sampleRate": 32000,
+      "channels": 1,
+      "peak": 0.88,
+      "rms": 0.070841,
+      "gain": 0.901057,
+      "crossfadeSeconds": 0,
+      "layers": [
+        {
+          "source": "cannon.mp3",
+          "offsetSeconds": 0,
+          "playbackRate": 0.81,
+          "weight": 0.8,
+          "lowpassHz": 6800,
+          "highpassHz": 35,
+          "delaySeconds": 0
+        },
+        {
+          "source": "cannon.mp3",
+          "offsetSeconds": 0,
+          "playbackRate": 0.49,
+          "weight": 0.27,
+          "lowpassHz": 1100,
+          "highpassHz": 25,
+          "delaySeconds": 0.015
+        }
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "ship-engine-loop.wav",
+      "bytes": 384044,
+      "sha256": "8f06d5d0509d216ce5a1ef8d3934a71436a97e21f7a3ffdf6ad98157f9a67e7f",
+      "duration": 6.0,
+      "loop": true,
+      "sampleRate": 32000,
+      "channels": 1,
+      "peak": 0.848537,
+      "rms": 0.14,
+      "gain": 2.309841,
+      "crossfadeSeconds": 0.25,
+      "layers": [
+        {
+          "source": "ship-engine.mp3",
+          "offsetSeconds": 7,
+          "playbackRate": 1,
+          "weight": 1,
+          "lowpassHz": 5300,
+          "highpassHz": 38,
+          "delaySeconds": 0
+        }
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "ship-wake-loop.wav",
+      "bytes": 384044,
+      "sha256": "7c857a6a2d68060690cc19cbabce5311fae7c47978b6b83ede6bda2b02272b45",
+      "duration": 6.0,
+      "loop": true,
+      "sampleRate": 32000,
+      "channels": 1,
+      "peak": 0.88,
+      "rms": 0.102202,
+      "gain": 20.522089,
+      "crossfadeSeconds": 0.25,
+      "layers": [
+        {
+          "source": "ocean.mp3",
+          "offsetSeconds": 46,
+          "playbackRate": 1,
+          "weight": 1,
+          "lowpassHz": 8200,
+          "highpassHz": 100,
+          "delaySeconds": 0
+        }
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "f22-takeoff.wav",
+      "bytes": 320044,
+      "sha256": "0fbb90e81b366649a2b5724407af9f4f5da93fb747db7cca95329c1d61a83831",
+      "duration": 5.0,
+      "loop": false,
+      "sampleRate": 32000,
+      "channels": 1,
+      "peak": 0.88,
+      "rms": 0.150751,
+      "gain": 0.706549,
+      "crossfadeSeconds": 0,
+      "layers": [
+        {
+          "source": "jet.mp3",
+          "offsetSeconds": 10.7,
+          "playbackRate": 1,
+          "weight": 1,
+          "lowpassHz": 9500,
+          "highpassHz": 80,
+          "delaySeconds": 0
+        }
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "f22-flight-loop.wav",
+      "bytes": 384044,
+      "sha256": "513283146d9eec6736a18b71a5c1f31a1b79c1c34ce37d659276c47b2a0f3ef8",
+      "duration": 6.0,
+      "loop": true,
+      "sampleRate": 32000,
+      "channels": 1,
+      "peak": 0.774816,
+      "rms": 0.14,
+      "gain": 0.545449,
+      "crossfadeSeconds": 0.25,
+      "layers": [
+        {
+          "source": "jet.mp3",
+          "offsetSeconds": 16.1,
+          "playbackRate": 1,
+          "weight": 1,
+          "lowpassHz": 7200,
+          "highpassHz": 70,
+          "delaySeconds": 0
+        }
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "damage-fire-loop.wav",
+      "bytes": 384044,
+      "sha256": "62c7a114e4f2854d16dcd9e18d56ea67c383ed501746669a5c7958354bd6e69c",
+      "duration": 6.0,
+      "loop": true,
+      "sampleRate": 32000,
+      "channels": 1,
+      "peak": 0.88,
+      "rms": 0.028048,
+      "gain": 7.845184,
+      "crossfadeSeconds": 0.25,
+      "layers": [
+        {
+          "source": "fire.mp3",
+          "offsetSeconds": 9,
+          "playbackRate": 1,
+          "weight": 1,
+          "lowpassHz": 7200,
+          "highpassHz": 130,
+          "delaySeconds": 0
+        }
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "metal-stress-loop.wav",
+      "bytes": 448044,
+      "sha256": "c3a29f9a3466d9ae0fbbe54227676a70e4fcab0e2cc6e5215823b948636f8e8e",
+      "duration": 7.0,
+      "loop": true,
+      "sampleRate": 32000,
+      "channels": 1,
+      "peak": 0.828116,
+      "rms": 0.1,
+      "gain": 1.888856,
+      "crossfadeSeconds": 0.25,
+      "layers": [
+        {
+          "source": "hull.mp3",
+          "offsetSeconds": 2.5,
+          "playbackRate": 1,
+          "weight": 1,
+          "lowpassHz": 4200,
+          "highpassHz": 45,
+          "delaySeconds": 0
+        }
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "sinking.wav",
+      "bytes": 448044,
+      "sha256": "88591b6dd0a6f7469cb742a9cc542b6d6e0bf8ac685bcc8307a416ba885e0de0",
+      "duration": 7.0,
+      "loop": false,
+      "sampleRate": 32000,
+      "channels": 1,
+      "peak": 0.88,
+      "rms": 0.119067,
+      "gain": 1.529697,
+      "crossfadeSeconds": 0,
+      "layers": [
+        {
+          "source": "hull.mp3",
+          "offsetSeconds": 2.8,
+          "playbackRate": 0.91,
+          "weight": 0.8,
+          "lowpassHz": 3500,
+          "highpassHz": 32,
+          "delaySeconds": 0
+        },
+        {
+          "source": "bubbles.mp3",
+          "offsetSeconds": 3.7,
+          "playbackRate": 0.88,
+          "weight": 1,
+          "lowpassHz": 3400,
+          "highpassHz": 35,
+          "delaySeconds": 0.65
+        },
+        {
+          "source": "splash.mp3",
+          "offsetSeconds": 0.65,
+          "playbackRate": 0.77,
+          "weight": 0.35,
+          "lowpassHz": 3400,
+          "highpassHz": 30,
+          "delaySeconds": 1.1
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "file": "ui-click.wav",
+      "bytes": 9004,
+      "sha256": "fa9869b9c384ad9505346252ecbb1fc1bf42acb1ec09b7e69fbf45ef682f9bec",
+      "duration": 0.14,
+      "loop": false,
+      "sampleRate": 32000,
+      "channels": 1,
+      "peak": 0.339398,
+      "rms": 0.045,
+      "gain": 2.039607,
+      "crossfadeSeconds": 0,
+      "layers": [
+        {
+          "source": "metal.mp3",
+          "offsetSeconds": 0.025,
+          "playbackRate": 1,
+          "weight": 0.6,
+          "lowpassHz": 5200,
+          "highpassHz": 650,
+          "delaySeconds": 0
+        }
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "turn-cue.wav",
+      "bytes": 24364,
+      "sha256": "757bf4ea6c0e2ce7175db1d6e92e2abc0569cb9206eeb3633edb93ce1307c493",
+      "duration": 0.38,
+      "loop": false,
+      "sampleRate": 32000,
+      "channels": 1,
+      "peak": 0.573844,
+      "rms": 0.06,
+      "gain": 2.038106,
+      "crossfadeSeconds": 0,
+      "layers": [
+        {
+          "source": "metal.mp3",
+          "offsetSeconds": 0.025,
+          "playbackRate": 0.87,
+          "weight": 1,
+          "lowpassHz": 5000,
+          "highpassHz": 450,
+          "delaySeconds": 0
+        }
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "victory.wav",
+      "bytes": 44844,
+      "sha256": "af8f02307d37ce3b0318413c670d2fd5530a596fc18e2e0335c315a48168183c",
+      "duration": 0.7,
+      "loop": false,
+      "sampleRate": 32000,
+      "channels": 1,
+      "peak": 0.771757,
+      "rms": 0.065,
+      "gain": 3.422502,
+      "crossfadeSeconds": 0,
+      "layers": [
+        {
+          "source": "metal.mp3",
+          "offsetSeconds": 0.018,
+          "playbackRate": 0.9,
+          "weight": 0.75,
+          "lowpassHz": 5800,
+          "highpassHz": 300,
+          "delaySeconds": 0
+        },
+        {
+          "source": "metal.mp3",
+          "offsetSeconds": 0.025,
+          "playbackRate": 1.15,
+          "weight": 0.45,
+          "lowpassHz": 5200,
+          "highpassHz": 650,
+          "delaySeconds": 0.14
+        }
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "defeat.wav",
+      "bytes": 51244,
+      "sha256": "947c77ae6dd61883a71431b5d0494c0953e2e4197d35972fd84de60ad8831e1c",
+      "duration": 0.8,
+      "loop": false,
+      "sampleRate": 32000,
+      "channels": 1,
+      "peak": 0.455964,
+      "rms": 0.055,
+      "gain": 2.312494,
+      "crossfadeSeconds": 0,
+      "layers": [
+        {
+          "source": "metal.mp3",
+          "offsetSeconds": 0.025,
+          "playbackRate": 0.63,
+          "weight": 0.8,
+          "lowpassHz": 2800,
+          "highpassHz": 180,
+          "delaySeconds": 0
+        },
+        {
+          "source": "hull.mp3",
+          "offsetSeconds": 3.5,
+          "playbackRate": 1,
+          "weight": 0.1,
+          "lowpassHz": 2600,
+          "highpassHz": 50,
+          "delaySeconds": 0.12
+        }
+      ],
+      "license": "CC0-1.0"
+    }
+  ],
+  "assetVersion": "naval-recorded-v2-20261002",
+  "processing": "Mono 32 kHz 16-bit PCM; source-only layering, rate shifts, second-order high/low-pass, DC removal, peak/RMS gain, 3 ms attacks (120 ms sinking), release fades, 250 ms overlapping loop seams. No runtime oscillators, generated noise, music, or voices; the licensed sonar source is an authored electronic sonar design."
+}

@@ -1,0 +1,16 @@
+import { chromium } from '@playwright/test';
+const browser=await chromium.launch({channel:'chrome'});
+const context=await browser.newContext({ignoreHTTPSErrors:true,viewport:{width:1280,height:800}});
+const a=await context.newPage();const errors=[];a.on('pageerror',e=>errors.push(e.message));
+await a.goto('https://222.96.173.194/games/battleship/');
+await a.locator('#mode-select').selectOption('online');
+await a.locator('#join-room').click();
+await a.locator('#room-code').waitFor({state:'visible'});
+console.log(JSON.stringify({emptyJoinCreatedRoom:true,codeLength:(await a.locator('#room-code').textContent()).length,status:await a.locator('#connection-label').textContent(),errors}));
+await a.locator('#help-toggle').click();await a.locator('#exit-action').click();
+let unblock;const gate=new Promise(r=>unblock=r);let apiCalls=0;
+await a.route('**/api/battleship/rooms',async route=>{apiCalls++;await gate;await route.continue();});
+await a.locator('#create-room').click();await a.waitForTimeout(100);await a.locator('#mode-select').selectOption('pve');unblock();
+await a.waitForTimeout(1500);
+console.log(JSON.stringify({resetDuringCreate:{bodyMode:await a.locator('body').getAttribute('data-mode'),selectMode:await a.locator('#mode-select').inputValue(),roomVisible:await a.locator('#room-code').isVisible(),apiCalls,errors}}));
+await browser.close();

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101820">
+  <title>TETRIS / PULSE : OVERDRIVE</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="overdrive.css">
+  <link rel="stylesheet" href="leaderboard.css">
+  <script src="engine.js" defer></script>
+  <script src="effects.js" defer></script>
+  <script src="stage.js" defer></script>
+  <script src="showcase.js" defer></script>
+  <script src="leaderboard.js" defer></script>
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <canvas id="ambience" aria-hidden="true"></canvas>
+  <canvas id="screen-fx" aria-hidden="true"></canvas>
+  <div id="big-callout" aria-hidden="true"><span id="callout-sub"></span><strong id="callout-word"></strong><i></i></div>
+  <main class="arcade">
+    <header class="masthead">
+      <a class="brand" href="./index.html" aria-label="테트리스 홈"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span> BLOCK / CLUB</a>
+      <span class="edition">ARCADE SERIES <b>002 / OVERDRIVE</b></span>
+    </header>
+    <section class="intro"><div><p class="eyebrow">TURN THE ORDINARY UP TO ELEVEN.</p><h1>TETRIS<span class="pulse-word">/ PULSE<small>OVERDRIVE EDITION</small></span></h1></div><p class="tagline">쌓을수록 뜨겁게. 터뜨릴수록 강렬하게.<br><span>T-SPINS. CHAIN REACTIONS. PURE ADRENALINE.</span></p></section>
+    <div class="session-bar"><div class="energy"><span id="energy-name">WARMING UP</span><div class="energy-track"><i id="energy-fill"></i></div><b id="energy-value">0%</b></div><div class="session-tools"><a id="arcade-home" href="/" hidden aria-label="게임 목록으로">← <span>ARCADE</span></a><button id="music" aria-pressed="true" aria-label="배경음악 끄기"><span class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i></span> MUSIC ON</button><button id="fullscreen" aria-label="전체 화면">⛶ <span>FULLSCREEN</span></button></div></div>
+    <section class="game-layout" aria-label="테트리스 게임">
+      <aside class="left-rail">
+        <div class="stat score-panel"><p class="label">SCORE <span>점수</span></p><strong id="score">000000</strong><p class="best">BEST <span id="best">000000</span></p></div>
+        <div class="stat progress-panel"><div class="stat-row"><span class="label">LEVEL</span><strong id="level">01</strong></div><div class="stat-row"><span class="label">LINES</span><strong id="lines">00</strong></div><div class="progress-track"><div id="progress"></div></div><p class="hint" id="level-hint">다음 레벨까지 10줄</p></div>
+        <div class="hold-panel"><p class="label">HOLD <kbd>C</kbd></p><canvas id="hold" width="160" height="90" role="img" aria-label="보관 중인 블록 없음"></canvas><p class="hint" id="hold-hint">블록을 잠시 보관하세요</p></div>
+        <div class="combo-panel"><span class="label">CLEAR COMBO</span><strong id="combo">—</strong><span id="combo-caption">연속으로 줄을 지워보세요</span><div class="combo-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="b2b-panel"><span>BACK TO BACK</span><strong id="b2b">—</strong></div><div class="tip"><span>MAKE IT A T-SPIN.</span><p>회전으로 틈을 파고들고,<br>다음 콤보에 불을 붙이세요.</p></div>
+      </aside>
+      <div class="board-column"><div class="board-top"><span><i id="status-dot"></i><span id="status">READY TO PLAY</span></span><span>10 × 20</span></div>
+        <div class="board-shell">
+          <canvas id="board" width="600" height="1200" role="img" aria-label="테트리스 게임판, 가로 10칸 세로 20칸"></canvas>
+          <div class="overlay" id="overlay"><div class="overlay-inner"><div class="hero-piece" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div><p class="eyebrow" id="overlay-tag">BEYOND THE DROP</p><h2 id="overlay-title">한 판, 터뜨려볼까요?</h2><p id="overlay-text">소리와 빛이 터지는 테트리스.<br>당신의 플레이가 이 무대를 깨웁니다.</p><button id="start" class="primary">LET’S PLAY <span>↗</span></button><a href="duel.html" id="duel-link" class="showcase-button">⚔ 친구와 1대1 <span>VERSUS ↗</span></a><button id="showcase" class="showcase-button">▷ 연출 체험 <span>11 SEC</span></button><button id="leaderboard-result" data-ranking-open class="showcase-button" hidden>기록 등록 · 온라인 랭킹 <span>↗</span></button><span class="overlay-hint" id="overlay-hint">또는 Enter 키를 누르세요</span></div></div>
+          <div class="danger-label" id="danger" hidden>▲ DANGER ZONE</div><button id="demo-exit" hidden>연출 체험 중 · 클릭해서 플레이 ↗</button>
+          <div id="notice" role="status" aria-live="polite"></div>
+        </div>
+        <div class="board-bottom"><span>● <span id="play-label">YOUR NEXT HIGH SCORE STARTS HERE</span></span><div class="toggles"><button id="motion" aria-pressed="true" aria-label="화면 반동 끄기">FX ON</button><button id="sound" aria-pressed="true" aria-label="효과음 끄기">SOUND ON</button></div></div>
+      </div>
+      <aside class="right-rail"><div class="next-panel"><p class="label">UP NEXT <span>다음 블록</span></p><canvas id="next" width="160" height="260" role="img" aria-label="다음 블록 미리보기"></canvas></div>
+        <details class="controls-panel"><summary>CONTROLS · 조작법</summary><dl><div><dt><kbd>←</kbd><kbd>→</kbd></dt><dd>좌우 이동</dd></div><div><dt><kbd>↑</kbd></dt><dd>오른쪽 회전</dd></div><div><dt><kbd>Z</kbd></dt><dd>왼쪽 회전</dd></div><div><dt><kbd>↓</kbd></dt><dd>빠르게 내리기</dd></div><div><dt><kbd class="wide">SPACE</kbd></dt><dd>바로 떨어뜨리기</dd></div><div><dt><kbd>C</kbd></dt><dd>블록 보관</dd></div><div><dt><kbd>P</kbd></dt><dd>일시정지</dd></div></dl></details>
+        <button id="pause" class="secondary" disabled>Ⅱ <span>일시정지</span></button>
+        <button id="restart" class="text-button" disabled>↻ 처음부터 다시</button>
+        <div class="ranking-panel"><p class="label">HALL OF FAME <span id="ranking-status">…</span></p><ol id="ranking-mini"></ol><button class="ranking-button" data-ranking-open>온라인 랭킹 ↗</button></div>
+      </aside>
+    </section>
+    <div class="touch-controls" aria-label="터치 조작"><button data-action="hold" aria-label="블록 보관">보관</button><button data-action="rotate" aria-label="회전">↻</button><button data-action="left" aria-label="왼쪽 이동">←</button><button data-action="down" aria-label="아래로 이동">↓</button><button data-action="right" aria-label="오른쪽 이동">→</button><button data-action="drop" aria-label="바로 떨어뜨리기">⤓</button></div>
+    <footer><span>BUILT FOR THE “ONE MORE ROUND.”</span><span>오프라인 플레이 <i>✦</i> 끝없는 도전</span></footer>
+  </main>
+  <dialog id="ranking-dialog" aria-labelledby="ranking-title">
+    <div class="ranking-heading"><div><p class="eyebrow">PULSE / WORLD LEADERBOARD</p><h2 id="ranking-title">HALL OF FAME</h2></div><button id="ranking-close" aria-label="랭킹 닫기">×</button></div>
+    <p class="ranking-copy" id="ranking-message" role="status">랭킹을 불러오고 있습니다.</p>
+    <form id="score-form" hidden><div class="run-result"><span>이번 플레이</span><strong id="run-score">0</strong></div><label for="player-name">공개 닉네임 · 2~16자</label><div class="score-input"><input id="player-name" name="name" minlength="2" maxlength="16" required autocomplete="nickname" placeholder="챔피언의 이름"><button id="submit-score" type="submit">기록 등록</button></div><p id="submit-message" role="status"></p></form>
+    <table class="ranking-table"><thead><tr><th>#</th><th>PLAYER</th><th>SCORE</th><th>LINES</th></tr></thead><tbody id="ranking-list"></tbody></table>
+    <button id="ranking-refresh">↻ 랭킹 새로고침</button>
+  </dialog>
+</body>
+</html>

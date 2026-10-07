@@ -1,0 +1,9 @@
+{
+  "title": "25 special effects rendered with blender",
+  "author": "rubberduck",
+  "license": "CC0-1.0",
+  "page": "https://opengameart.org/content/25-special-effects-rendered-with-blender",
+  "download": "https://opengameart.org/sites/default/files/blender-volumetric-particles-effects.zip",
+  "files": "effect-images/explosion/fire+smoke/0001.png through 0030.png",
+  "adaptation": "30 unchanged RGBA frames packed into 8x4 atlas; 128px per frame"
+}

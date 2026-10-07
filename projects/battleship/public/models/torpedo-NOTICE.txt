@@ -1,0 +1,5 @@
+Torpedo geometry: "Torpedo on Loading Cradle", 3D Assets / 3DAssets.dev, CC0-1.0.
+https://3dassets.dev/assets/submarine-interior-and-control-room-torpedo-on-loading-f40aecaa
+https://creativecommons.org/publicdomain/zero/1.0/
+Publisher labels the source as made with AI tools. Generic torpedo; not manufacturer-verified.
+Modifications: removed loading equipment; retained body/fins/propeller; source-index LOW LOD; axis/scale conversion; source solid colors baked into vertex colors.

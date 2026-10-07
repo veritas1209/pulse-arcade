@@ -1,0 +1,117 @@
+Battleship recorded audio — source credits and licenses
+======================================================
+Verified 2026-10-02. No endorsement by the recordists is implied.
+CC0 recordings may be copied, modified, distributed and used commercially.
+CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/
+
+SamsterBirdies — Cannon firecracker 2
+https://freesound.org/people/SamsterBirdies/sounds/621000/
+CC0 1.0. Used in battleship-cannon.wav, metal-impact.wav, missile-launch.wav,
+air-intercept.wav. Recorded-firecracker cannon design; trimmed, layered,
+rate shifted, filtered and gain adjusted.
+
+monotraum — Ship diesel engine
+https://freesound.org/people/monotraum/sounds/253606/
+CC0 1.0. Used in ship-engine-loop.wav, torpedo-launch.wav,
+torpedo-flight-loop.wav. Trimmed, filtered, rate shifted and crossfaded.
+
+felix.blume / recordist Sara Lana — Diving into water
+https://freesound.org/people/felix.blume/sounds/434978/
+CC0 1.0. Used in water-splash.wav, torpedo-launch.wav, sinking.wav.
+Trimmed, rate shifted, filtered, layered and gain adjusted.
+
+ceich93 — Fireplace
+https://freesound.org/people/ceich93/sounds/263864/
+CC0 1.0. Used in damage-fire-loop.wav. Trimmed, filtered and crossfaded.
+
+RyanKingArt — Metal impact
+https://freesound.org/people/RyanKingArt/sounds/620077/
+CC0 1.0. Used in metal-impact.wav, air-intercept.wav, ui-click.wav,
+turn-cue.wav, victory.wav, defeat.wav. Mechanism trims, filtering,
+rate shifts, layered transients and fades.
+
+Sandermotions — F16 takeoff and flyover
+https://freesound.org/people/Sandermotions/sounds/275990/
+CC0 1.0. Used in f22-takeoff.wav, f22-flight-loop.wav,
+cannon-flight-loop.wav and missile-flight-loop.wav.
+F-16 recording; filenames f22-* retained for application compatibility.
+Trimmed to the audible takeoff, filtered, crossfaded and gain adjusted.
+
+esh9419 — Ocean breeze mix
+https://freesound.org/people/esh9419/sounds/417797/
+CC0 1.0. Used in sea-loop.wav and ship-wake-loop.wav. Trimmed, filtered,
+crossfaded and gain adjusted. Its CC0 parents are subtyrant
+https://freesound.org/people/subtyrant/sounds/132079/ and indieground
+https://freesound.org/people/indieground/sounds/322139/.
+
+qubodup — Far Away Rocket Launch
+https://freesound.org/people/qubodup/sounds/211617/
+CC0 1.0 (creator changed the dedication on 2026-05-19).
+The page describes an edited public-domain military missile recording.
+Used in missile-launch.wav and missile-flight-loop.wav.
+Trimmed, filtered, layered and gain adjusted.
+
+Lewooz — Sub Sul FONDO.mp3
+https://freesound.org/people/Lewooz/sounds/514306/
+CC0 1.0. Submerged metallic creaks / stress sound design.
+Used in metal-stress-loop.wav, metal-impact.wav, sinking.wav, defeat.wav.
+Trimmed, filtered, rate shifted, crossfaded and layered.
+
+Breviceps — Submarine Sonar
+https://freesound.org/people/Breviceps/sounds/493162/
+CC0 1.0. Author-designed submarine sonar cue (not verified field recording).
+Used in sonar-ping.wav; one ping trimmed from the source, mono conversion,
+filtering, quiet gain adjustment and fades. Used only for the sonar action.
+
+REQUIRED ATTRIBUTION — Creative Commons Attribution 4.0
+------------------------------------------------------
+Sinking_Submarine.wav by gkillhour
+https://freesound.org/people/gkillhour/sounds/267223/
+Licensed under Creative Commons Attribution 4.0 International:
+https://creativecommons.org/licenses/by/4.0/
+Source: Yeti microphone recording of pouring water, slowed by the creator.
+Used in torpedo-launch.wav, torpedo-flight-loop.wav and sinking.wav.
+Changes in this game: excerpts, mono 32 kHz conversion, additional rate
+shifts, high/low-pass filtering, layering with the credited CC0 ship/water/
+metal recordings, gain/fade adjustment and overlapping loop seams.
+Those three derivative WAVs are distributed under CC BY 4.0.
+Credit the original creator, keep source and license links, and identify
+changes when redistributing them. Commercial use and modification are allowed.
+No additional restrictions are imposed on these audio derivatives.
+
+Exact source preview URLs, SHA-256 hashes, output hashes and layer recipes:
+audio/source-manifest.json (same folder). All outputs are 16-bit PCM WAV.
+Documentation and reproduction steps: docs/audio-sources.md.
+
+Defense audio addition — verified 2026-10-03
+==========================================
+REQUIRED ATTRIBUTION — Creative Commons Attribution 3.0
+"Minigun" by Jim Rogers, SoundBible.com
+https://soundbible.com/1920-Minigun.html
+https://creativecommons.org/licenses/by/3.0/
+Used in ciws-burst.wav. Changes:0.095–0.915s excerpt, mono32kHz PCM16,
+90Hz high-pass/11.5kHz low-pass filtering, DC removal, peak gain and fades.
+The derivative ciws-burst.wav is distributed under CC BY3.0. Retain title,
+author, source/license links and change notice when redistributing. No
+endorsement or additional restrictions. Rotary-gun sound effect, not claimed
+to be a field recording of the exact modeled naval CIWS.
+
+qubodup — "Blow Up Sound", CC0-1.0
+https://freesound.org/people/qubodup/sounds/855896/
+Source describes extraction from "EOD Broll package" (18Nov2020),
+Seaman Kelly Meyer / AFN Okinawa, Okinawa, Japan; creator applied a limiter.
+Used in intercept-detonation.wav: first1.65s, mono32kHz PCM16,55Hz/10kHz
+filtering, DC removal, peak gain and fades. Real EOD detonation adapted as
+an airborne interception cue; not an actual missile interception recording.
+
+qubodup — "Howitzer Gun Shots", CC0-1.0
+https://freesound.org/people/qubodup/sounds/67516/
+Creator identifies source as public-domain US military government video.
+Used in naval-cannon-shot.wav: first2.6s, mono32kHz PCM16,38Hz/7.8kHz
+filtering, DC removal, peak gain and fades. Artillery recording adapted for
+naval cannon presentation; not claimed to be an Iowa16-inch recording.
+
+CC0 license: https://creativecommons.org/publicdomain/zero/1.0/
+Source MP3 URLs, hashes and output measurements: source-manifest.json.
+Earlier cannon and air-intercept WAVs remain credited but current runtime
+uses naval-cannon-shot.wav and intercept-detonation.wav instead.

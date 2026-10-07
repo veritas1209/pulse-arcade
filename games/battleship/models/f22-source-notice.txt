@@ -1,0 +1,8 @@
+F22 RAPTOR
+{
+  "author": "sxnneh (https://sketchfab.com/Sxnneh)",
+  "license": "SKETCHFAB Standard (https://sketchfab.com/licenses)",
+  "source": "https://sketchfab.com/3d-models/f22-raptor-ec44bd6cffa649b4927799a7b19c703b",
+  "title": "F22 RAPTOR"
+}
+User supplied GLB. Adaptations: Baked node matrices, reversed winding for mirrored nodes; Original indexed UV and normal corner attributes retained without nearest-position remapping; Removed occluded cockpit detail and deployed gear for flight; Uniform scaling only; intact source wings and tail retained for all LODs; Parked distance LODs select original vertex indices with attribute-aware meshoptimizer; exact source position-normal-UV tuples and part extrema retained

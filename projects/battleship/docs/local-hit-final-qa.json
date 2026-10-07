@@ -1,0 +1,831 @@
+{
+  "before": {
+    "renderer": {
+      "calls": 17,
+      "triangles": 89366,
+      "geometries": 24,
+      "textures": 11
+    },
+    "calls": 17,
+    "triangles": 89366,
+    "geometries": 24,
+    "textures": 11,
+    "dpr": 1,
+    "postPasses": 0,
+    "shadowLights": 1,
+    "shadowMap": 1024,
+    "boardSize": 30,
+    "camera": {
+      "position": [
+        -43.41684087482594,
+        5.033377196645636,
+        -49.9719827377143
+      ],
+      "target": [
+        -45.96118539181165,
+        -1.7763568394002505e-15,
+        -53.95443502517019
+      ],
+      "distance": 6.904237919328259,
+      "minDistance": 1.6,
+      "maxDistance": 205,
+      "screenSpacePanning": true
+    },
+    "damageMarks": {
+      "0-carrier": [],
+      "0-destroyer-1": [],
+      "0-destroyer-2": [],
+      "0-battleship-1": [],
+      "0-battleship-2": []
+    },
+    "visibleShips": [
+      "0-carrier",
+      "0-destroyer-1",
+      "0-destroyer-2",
+      "0-battleship-1",
+      "0-battleship-2"
+    ],
+    "highDetailShips": 4,
+    "shipPositions": {
+      "0-carrier": [
+        -46,
+        -0.0002548782638606812,
+        -54
+      ],
+      "0-destroyer-1": [
+        -54,
+        -0.022625187444240347,
+        -46
+      ],
+      "0-destroyer-2": [
+        -38,
+        0.022837321010660848,
+        -46
+      ],
+      "0-battleship-1": [
+        -50,
+        -0.021173392617062872,
+        -38
+      ],
+      "0-battleship-2": [
+        -42,
+        0.020897969989703682,
+        -38
+      ]
+    },
+    "reconFighters": 0,
+    "islandCells": 90,
+    "islandTrees": 60,
+    "islandRocks": 29,
+    "reachableTiles": 0,
+    "deploymentTiles": 49,
+    "reconPreviewCells": 0,
+    "assets": {
+      "carrier": {
+        "sourceSize": [
+          13.349999952316285,
+          12.07000000178814,
+          43.69325356185436
+        ],
+        "fittedSize": [
+          1.0999410152435303,
+          0.9944784250110388,
+          3.6000001430511475
+        ],
+        "uniformScale": 0.0823925825277273,
+        "triangles": 45660,
+        "lowTriangles": 5248
+      },
+      "battleship": {
+        "sourceSize": [
+          8.094999999701976,
+          13.57000000178814,
+          43.69325356185436
+        ],
+        "fittedSize": [
+          0.6021238565444946,
+          1.0093662878498435,
+          3.25
+        ],
+        "uniformScale": 0.0743821925597538,
+        "triangles": 49004,
+        "lowTriangles": 5076
+      },
+      "destroyer": {
+        "sourceSize": [
+          6.394999999701977,
+          12.42000000178814,
+          37.69325356185436
+        ],
+        "fittedSize": [
+          0.4920111298561096,
+          0.9555556250270456,
+          2.9000000953674316
+        ],
+        "uniformScale": 0.07693684481869204,
+        "triangles": 40984,
+        "lowTriangles": 5680
+      }
+    },
+    "persistentEmitters": 0,
+    "fireEmitters": [],
+    "particles": 0,
+    "debris": 0
+  },
+  "after": {
+    "renderer": {
+      "calls": 17,
+      "triangles": 90356,
+      "geometries": 26,
+      "textures": 11
+    },
+    "calls": 17,
+    "triangles": 90356,
+    "geometries": 26,
+    "textures": 11,
+    "dpr": 1,
+    "postPasses": 0,
+    "shadowLights": 1,
+    "shadowMap": 1024,
+    "boardSize": 30,
+    "camera": {
+      "position": [
+        -43.41684087482594,
+        5.033377196645636,
+        -49.9719827377143
+      ],
+      "target": [
+        -45.96118539181165,
+        -1.7763568394002505e-15,
+        -53.95443502517019
+      ],
+      "distance": 6.904237919328259,
+      "minDistance": 1.6,
+      "maxDistance": 205,
+      "screenSpacePanning": true
+    },
+    "damageMarks": {
+      "0-carrier": [
+        {
+          "x": 0.1,
+          "z": -0.22,
+          "seed": 1937
+        }
+      ],
+      "0-destroyer-1": [],
+      "0-destroyer-2": [],
+      "0-battleship-1": [],
+      "0-battleship-2": []
+    },
+    "visibleShips": [
+      "0-carrier",
+      "0-destroyer-1",
+      "0-destroyer-2",
+      "0-battleship-1",
+      "0-battleship-2"
+    ],
+    "highDetailShips": 4,
+    "shipPositions": {
+      "0-carrier": [
+        -46,
+        -0.02204802647709609,
+        -54
+      ],
+      "0-destroyer-1": [
+        -54,
+        0.019891221195569825,
+        -46
+      ],
+      "0-destroyer-2": [
+        -38,
+        -0.001540788254467477,
+        -46
+      ],
+      "0-battleship-1": [
+        -50,
+        -0.0019959245575130223,
+        -38
+      ],
+      "0-battleship-2": [
+        -42,
+        -0.021829274533320606,
+        -38
+      ]
+    },
+    "reconFighters": 0,
+    "islandCells": 90,
+    "islandTrees": 60,
+    "islandRocks": 29,
+    "reachableTiles": 0,
+    "deploymentTiles": 49,
+    "reconPreviewCells": 0,
+    "assets": {
+      "carrier": {
+        "sourceSize": [
+          13.349999952316285,
+          12.07000000178814,
+          43.69325356185436
+        ],
+        "fittedSize": [
+          1.0999410152435303,
+          0.9944784250110388,
+          3.6000001430511475
+        ],
+        "uniformScale": 0.0823925825277273,
+        "triangles": 45660,
+        "lowTriangles": 5248
+      },
+      "battleship": {
+        "sourceSize": [
+          8.094999999701976,
+          13.57000000178814,
+          43.69325356185436
+        ],
+        "fittedSize": [
+          0.6021238565444946,
+          1.0093662878498435,
+          3.25
+        ],
+        "uniformScale": 0.0743821925597538,
+        "triangles": 49004,
+        "lowTriangles": 5076
+      },
+      "destroyer": {
+        "sourceSize": [
+          6.394999999701977,
+          12.42000000178814,
+          37.69325356185436
+        ],
+        "fittedSize": [
+          0.4920111298561096,
+          0.9555556250270456,
+          2.9000000953674316
+        ],
+        "uniformScale": 0.07693684481869204,
+        "triangles": 40984,
+        "lowTriangles": 5680
+      }
+    },
+    "persistentEmitters": 1,
+    "fireEmitters": [
+      {
+        "position": [
+          -46.054997050762175,
+          0.3621592059981847,
+          -53.60399998426438
+        ],
+        "scale": 0.0683,
+        "strength": 0.6875,
+        "flameHeight": 0.224109375,
+        "maxFlameWidth": 0.228378125,
+        "smokeHeight": 0.55323
+      }
+    ],
+    "particles": 15,
+    "debris": 0
+  },
+  "points": [
+    {
+      "x": 847.0188771395649,
+      "y": 603.0463076222029
+    },
+    {
+      "x": 1052.2728923143097,
+      "y": 379.23146115685716
+    }
+  ],
+  "clicks": [
+    {
+      "cell": {
+        "x": 3,
+        "z": 1
+      },
+      "localHit": {
+        "x": 0.009133158069585506,
+        "z": -0.5467181658653459
+      }
+    },
+    {
+      "cell": {
+        "x": 3,
+        "z": 1
+      },
+      "localHit": {
+        "x": 0.008710232772585503,
+        "z": 0.5551702450977966
+      }
+    }
+  ],
+  "pan": {
+    "position": [
+      -43.71433681157579,
+      5.266354131933544,
+      -50.07637284911305
+    ],
+    "target": [
+      -46.2586813285615,
+      0.23297693528790592,
+      -54.05882513656894
+    ],
+    "distance": 6.904237919328259,
+    "minDistance": 1.6,
+    "maxDistance": 205,
+    "screenSpacePanning": true
+  },
+  "touch": {
+    "renderer": {
+      "calls": 24,
+      "triangles": 94764,
+      "geometries": 21,
+      "textures": 11
+    },
+    "calls": 24,
+    "triangles": 94764,
+    "geometries": 21,
+    "textures": 11,
+    "dpr": 1.5,
+    "postPasses": 0,
+    "shadowLights": 1,
+    "shadowMap": 1024,
+    "boardSize": 30,
+    "camera": {
+      "position": [
+        134.74556326067713,
+        266.56187514612213,
+        210.90609901671203
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "distance": 365.6405102040816,
+      "minDistance": 1.6,
+      "maxDistance": 376.9489795918367,
+      "screenSpacePanning": true
+    },
+    "damageMarks": {
+      "0-carrier": [],
+      "0-destroyer-1": [],
+      "0-destroyer-2": [],
+      "0-battleship-1": [],
+      "0-battleship-2": []
+    },
+    "visibleShips": [
+      "0-carrier",
+      "0-destroyer-1",
+      "0-destroyer-2",
+      "0-battleship-1",
+      "0-battleship-2"
+    ],
+    "highDetailShips": 0,
+    "shipPositions": {
+      "0-carrier": [
+        -46,
+        -0.004619975261681271,
+        -54
+      ],
+      "0-destroyer-1": [
+        -54,
+        0.024263487916747522,
+        -46
+      ],
+      "0-destroyer-2": [
+        -38,
+        -0.020418311736598086,
+        -46
+      ],
+      "0-battleship-1": [
+        -50,
+        0.018178260986230394,
+        -38
+      ],
+      "0-battleship-2": [
+        -42,
+        -0.0231706275601107,
+        -38
+      ]
+    },
+    "reconFighters": 0,
+    "islandCells": 90,
+    "islandTrees": 60,
+    "islandRocks": 29,
+    "reachableTiles": 0,
+    "deploymentTiles": 49,
+    "reconPreviewCells": 0,
+    "assets": {
+      "carrier": {
+        "sourceSize": [
+          13.349999952316285,
+          12.07000000178814,
+          43.69325356185436
+        ],
+        "fittedSize": [
+          1.0999410152435303,
+          0.9944784250110388,
+          3.6000001430511475
+        ],
+        "uniformScale": 0.0823925825277273,
+        "triangles": 45660,
+        "lowTriangles": 5248
+      },
+      "battleship": {
+        "sourceSize": [
+          8.094999999701976,
+          13.57000000178814,
+          43.69325356185436
+        ],
+        "fittedSize": [
+          0.6021238565444946,
+          1.0093662878498435,
+          3.25
+        ],
+        "uniformScale": 0.0743821925597538,
+        "triangles": 49004,
+        "lowTriangles": 5076
+      },
+      "destroyer": {
+        "sourceSize": [
+          6.394999999701977,
+          12.42000000178814,
+          37.69325356185436
+        ],
+        "fittedSize": [
+          0.4920111298561096,
+          0.9555556250270456,
+          2.9000000953674316
+        ],
+        "uniformScale": 0.07693684481869204,
+        "triangles": 40984,
+        "lowTriangles": 5680
+      }
+    },
+    "persistentEmitters": 0,
+    "fireEmitters": [],
+    "particles": 0,
+    "debris": 0
+  },
+  "errors": [],
+  "overviews": [
+    {
+      "mobile": false,
+      "diagnostics": {
+        "renderer": {
+          "calls": 22,
+          "triangles": 94572,
+          "geometries": 20,
+          "textures": 11
+        },
+        "calls": 22,
+        "triangles": 94572,
+        "geometries": 20,
+        "textures": 11,
+        "dpr": 1,
+        "postPasses": 0,
+        "shadowLights": 1,
+        "shadowMap": 1024,
+        "boardSize": 30,
+        "camera": {
+          "position": [
+            75.54644438336763,
+            149.45057475840116,
+            118.24660860005368
+          ],
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "distance": 205,
+          "minDistance": 1.6,
+          "maxDistance": 205,
+          "screenSpacePanning": true
+        },
+        "damageMarks": {
+          "0-carrier": [],
+          "0-destroyer-1": [],
+          "0-destroyer-2": [],
+          "0-battleship-1": [],
+          "0-battleship-2": []
+        },
+        "visibleShips": [
+          "0-carrier",
+          "0-destroyer-1",
+          "0-destroyer-2",
+          "0-battleship-1",
+          "0-battleship-2"
+        ],
+        "highDetailShips": 0,
+        "shipPositions": {
+          "0-carrier": [
+            -46,
+            0.0024854934655777197,
+            -54
+          ],
+          "0-destroyer-1": [
+            -54,
+            0.02158547949991813,
+            -46
+          ],
+          "0-destroyer-2": [
+            -38,
+            -0.023654139985835657,
+            -46
+          ],
+          "0-battleship-1": [
+            -50,
+            0.02227546755220618,
+            -38
+          ],
+          "0-battleship-2": [
+            -42,
+            -0.0195896318508625,
+            -38
+          ]
+        },
+        "reconFighters": 0,
+        "islandCells": 90,
+        "islandTrees": 60,
+        "islandRocks": 29,
+        "reachableTiles": 0,
+        "deploymentTiles": 49,
+        "reconPreviewCells": 0,
+        "assets": {
+          "carrier": {
+            "sourceSize": [
+              13.349999952316285,
+              12.07000000178814,
+              43.69325356185436
+            ],
+            "fittedSize": [
+              1.0999410152435303,
+              0.9944784250110388,
+              3.6000001430511475
+            ],
+            "uniformScale": 0.0823925825277273,
+            "triangles": 45660,
+            "lowTriangles": 5248
+          },
+          "battleship": {
+            "sourceSize": [
+              8.094999999701976,
+              13.57000000178814,
+              43.69325356185436
+            ],
+            "fittedSize": [
+              0.6021238565444946,
+              1.0093662878498435,
+              3.25
+            ],
+            "uniformScale": 0.0743821925597538,
+            "triangles": 49004,
+            "lowTriangles": 5076
+          },
+          "destroyer": {
+            "sourceSize": [
+              6.394999999701977,
+              12.42000000178814,
+              37.69325356185436
+            ],
+            "fittedSize": [
+              0.4920111298561096,
+              0.9555556250270456,
+              2.9000000953674316
+            ],
+            "uniformScale": 0.07693684481869204,
+            "triangles": 40984,
+            "lowTriangles": 5680
+          }
+        },
+        "persistentEmitters": 0,
+        "fireEmitters": [],
+        "particles": 0,
+        "debris": 0
+      },
+      "errors": []
+    },
+    {
+      "mobile": true,
+      "diagnostics": {
+        "renderer": {
+          "calls": 22,
+          "triangles": 94572,
+          "geometries": 20,
+          "textures": 11
+        },
+        "calls": 22,
+        "triangles": 94572,
+        "geometries": 20,
+        "textures": 11,
+        "dpr": 1,
+        "postPasses": 0,
+        "shadowLights": 1,
+        "shadowMap": 1024,
+        "boardSize": 30,
+        "camera": {
+          "position": [
+            163.49025399887765,
+            323.4263720412579,
+            255.89778886780846
+          ],
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "distance": 443.64102564102564,
+          "minDistance": 1.6,
+          "maxDistance": 443.64102564102564,
+          "screenSpacePanning": true
+        },
+        "damageMarks": {
+          "0-carrier": [],
+          "0-destroyer-1": [],
+          "0-destroyer-2": [],
+          "0-battleship-1": [],
+          "0-battleship-2": []
+        },
+        "visibleShips": [
+          "0-carrier",
+          "0-destroyer-1",
+          "0-destroyer-2",
+          "0-battleship-1",
+          "0-battleship-2"
+        ],
+        "highDetailShips": 0,
+        "shipPositions": {
+          "0-carrier": [
+            -46,
+            0.0006452446805484669,
+            -54
+          ],
+          "0-destroyer-1": [
+            -54,
+            0.022456346326171512,
+            -46
+          ],
+          "0-destroyer-2": [
+            -38,
+            -0.022993379391389734,
+            -46
+          ],
+          "0-battleship-1": [
+            -50,
+            0.021378393869336824,
+            -38
+          ],
+          "0-battleship-2": [
+            -42,
+            -0.020681139491837856,
+            -38
+          ]
+        },
+        "reconFighters": 0,
+        "islandCells": 90,
+        "islandTrees": 60,
+        "islandRocks": 29,
+        "reachableTiles": 0,
+        "deploymentTiles": 49,
+        "reconPreviewCells": 0,
+        "assets": {
+          "carrier": {
+            "sourceSize": [
+              13.349999952316285,
+              12.07000000178814,
+              43.69325356185436
+            ],
+            "fittedSize": [
+              1.0999410152435303,
+              0.9944784250110388,
+              3.6000001430511475
+            ],
+            "uniformScale": 0.0823925825277273,
+            "triangles": 45660,
+            "lowTriangles": 5248
+          },
+          "battleship": {
+            "sourceSize": [
+              8.094999999701976,
+              13.57000000178814,
+              43.69325356185436
+            ],
+            "fittedSize": [
+              0.6021238565444946,
+              1.0093662878498435,
+              3.25
+            ],
+            "uniformScale": 0.0743821925597538,
+            "triangles": 49004,
+            "lowTriangles": 5076
+          },
+          "destroyer": {
+            "sourceSize": [
+              6.394999999701977,
+              12.42000000178814,
+              37.69325356185436
+            ],
+            "fittedSize": [
+              0.4920111298561096,
+              0.9555556250270456,
+              2.9000000953674316
+            ],
+            "uniformScale": 0.07693684481869204,
+            "triangles": 40984,
+            "lowTriangles": 5680
+          }
+        },
+        "persistentEmitters": 0,
+        "fireEmitters": [],
+        "particles": 0,
+        "debris": 0
+      },
+      "errors": []
+    }
+  ],
+  "cache": {
+    "samples": [
+      {
+        "geometry": 4,
+        "points": 1,
+        "gpu": 21
+      },
+      {
+        "geometry": 4,
+        "points": 1,
+        "gpu": 21
+      },
+      {
+        "geometry": 4,
+        "points": 1,
+        "gpu": 21
+      },
+      {
+        "geometry": 4,
+        "points": 1,
+        "gpu": 21
+      },
+      {
+        "geometry": 4,
+        "points": 1,
+        "gpu": 21
+      },
+      {
+        "geometry": 4,
+        "points": 1,
+        "gpu": 21
+      },
+      {
+        "geometry": 4,
+        "points": 1,
+        "gpu": 21
+      },
+      {
+        "geometry": 4,
+        "points": 1,
+        "gpu": 21
+      },
+      {
+        "geometry": 4,
+        "points": 1,
+        "gpu": 21
+      },
+      {
+        "geometry": 4,
+        "points": 1,
+        "gpu": 21
+      },
+      {
+        "geometry": 4,
+        "points": 1,
+        "gpu": 21
+      },
+      {
+        "geometry": 4,
+        "points": 1,
+        "gpu": 21
+      },
+      {
+        "geometry": 4,
+        "points": 1,
+        "gpu": 21
+      },
+      {
+        "geometry": 4,
+        "points": 1,
+        "gpu": 21
+      },
+      {
+        "geometry": 4,
+        "points": 1,
+        "gpu": 21
+      }
+    ],
+    "afterReset": {
+      "geometry": 3,
+      "points": 0,
+      "gpu": 20,
+      "emitters": 0
+    },
+    "errors": []
+  }
+}

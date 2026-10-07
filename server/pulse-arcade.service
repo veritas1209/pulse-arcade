@@ -1,0 +1,30 @@
+[Unit]
+Description=PULSE ARCADE game portal and leaderboard
+After=network.target
+
+[Service]
+Type=simple
+User=hajin
+Group=hajin
+WorkingDirectory=/home/hajin/services/pulse-arcade/current
+Environment=PYTHONUNBUFFERED=1
+Environment=PULSE_NODE=/home/hajin/services/pulse-arcade/node/bin/node
+Environment=TETRIS_PUBLIC_ORIGIN=https://hajin-desktop.tailfb939b.ts.net:10000
+Environment=TETRIS_DATABASE=/home/hajin/.local/share/pulse-arcade/scores.sqlite3
+ExecStart=/home/hajin/services/pulse-arcade/venv/bin/python server/app.py --host 127.0.0.1 --port 18080
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=20
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/hajin/.local/share/pulse-arcade
+CapabilityBoundingSet=
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+MemoryMax=384M
+TasksMax=64
+
+[Install]
+WantedBy=multi-user.target

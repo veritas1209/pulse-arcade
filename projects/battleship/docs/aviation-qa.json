@@ -1,0 +1,85 @@
+{
+  "bounds": [
+    0.3697297275066376,
+    0.1320270262658596,
+    0.5
+  ],
+  "triangles": 1460,
+  "carrier": {
+    "source": [
+      13.349999952316285,
+      12.07000000178814,
+      43.69325356185436
+    ],
+    "fitted": [
+      1.0999410152435303,
+      0.9944784250110388,
+      3.6000001430511475
+    ],
+    "scale": 0.0823925825277273,
+    "triangles": 57720,
+    "low": 20748
+  },
+  "events": [
+    {
+      "phase": "launch",
+      "kind": "carrier",
+      "time": 0
+    },
+    {
+      "phase": "impact",
+      "kind": "carrier",
+      "time": 2.0000000000000013
+    },
+    {
+      "phase": "launch",
+      "kind": "carrier",
+      "time": 2.010000000000001
+    },
+    {
+      "phase": "impact",
+      "kind": "carrier",
+      "time": 3.4099999999999713
+    }
+  ],
+  "inFlight": {
+    "projectiles": [
+      {
+        "kind": "carrier",
+        "delivery": "airstrike",
+        "duration": 2,
+        "remaining": 0.6999999999999988,
+        "blocked": false
+      }
+    ],
+    "airbursts": 0,
+    "waterRings": 0,
+    "persistentEmitters": 0,
+    "fireEmitters": [],
+    "particles": 2,
+    "debris": 0,
+    "detachedParts": []
+  },
+  "arrival": {
+    "projectiles": [],
+    "airbursts": 0,
+    "waterRings": 1,
+    "persistentEmitters": 0,
+    "fireEmitters": [],
+    "particles": 69,
+    "debris": 9,
+    "detachedParts": []
+  },
+  "intercepted": {
+    "projectiles": [],
+    "airbursts": 1,
+    "waterRings": 0,
+    "persistentEmitters": 0,
+    "fireEmitters": [],
+    "particles": 49,
+    "debris": 0,
+    "detachedParts": []
+  },
+  "interceptionTime": 1.3999999999999702,
+  "errors": []
+}

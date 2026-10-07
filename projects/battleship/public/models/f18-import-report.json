@@ -1,0 +1,73 @@
+{
+  "source": {
+    "extras": {
+      "author": "KOG_THORNS (https://sketchfab.com/ioai25312)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/boeing-fa-18e-super-hornet-9e852037bf2141dcb3fda17013958131",
+      "title": "Boeing F/A-18E \"Super Hornet\""
+    },
+    "generator": "Sketchfab-16.73.0",
+    "version": "2.0"
+  },
+  "mirror": "https://raw.githubusercontent.com/cinascorp/opensky/main/boeing-f18/",
+  "license": "CC-BY-4.0",
+  "sourceTriangles": 77840,
+  "sourceParts": 220,
+  "sourceSize": [
+    91.31950029344479,
+    24.480870588958886,
+    65.78399564777905
+  ],
+  "runtimeVariants": {
+    "flight": {
+      "triangles": 20059,
+      "vertices": 60177,
+      "packedBytes": 722124,
+      "grid": 0.002,
+      "bounds": [
+        [
+          -0.3595725360560592,
+          -0.05527846205246391,
+          -0.4999999626330456
+        ],
+        [
+          0.3595729422180906,
+          0.17903961821780234,
+          0.5000000341535686
+        ]
+      ]
+    },
+    "parked": {
+      "triangles": 5616,
+      "vertices": 16848,
+      "packedBytes": 202176,
+      "grid": 0.006,
+      "bounds": [
+        [
+          -0.3595725360560592,
+          -0.09,
+          -0.5000078744674392
+        ],
+        [
+          0.3595729422180906,
+          0.17777785604416416,
+          0.4866382861260481
+        ]
+      ]
+    },
+    "flightLow": {
+      "triangles": 8609,
+      "packedBytes": 309924,
+      "grid": 0.015,
+      "normalSignSeams": true
+    }
+  },
+  "sourceSha256": "b91062debbe22eaef0410373148a453a60dd25c17ea33b7adcfaf44cc6de6765",
+  "modifications": [
+    "Baked glTF node transforms",
+    "Per-source-part quadric simplification plus bounded vertex clustering",
+    "Source texture colors baked into linear vertex colors; original normals retained",
+    "Source gear parts omitted for flight",
+    "Centered, rotated and uniformly normalized; no aspect-ratio distortion"
+  ]
+}

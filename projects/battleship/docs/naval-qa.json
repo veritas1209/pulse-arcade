@@ -1,0 +1,103 @@
+{
+  "input": [
+    {
+      "x": 5,
+      "z": 5
+    }
+  ],
+  "persistent": {
+    "renderer": {
+      "calls": 13,
+      "triangles": 87347,
+      "geometries": 16,
+      "textures": 8
+    },
+    "calls": 13,
+    "triangles": 87347,
+    "geometries": 16,
+    "textures": 8,
+    "materials": 15,
+    "dpr": 1,
+    "postPasses": 0,
+    "shadowLights": 1,
+    "shadowMap": 1024,
+    "board": "own",
+    "visibleShips": [
+      "carrier"
+    ],
+    "assets": {
+      "carrier": {
+        "sourceMeshes": 1309,
+        "triangles": 47608,
+        "sectors": 10
+      },
+      "battleship": {
+        "sourceMeshes": 1489,
+        "triangles": 51442,
+        "sectors": 8
+      },
+      "destroyer": {
+        "sourceMeshes": 1338,
+        "triangles": 42569,
+        "sectors": 5
+      }
+    },
+    "persistentEmitters": 1,
+    "particles": 15,
+    "debris": 0
+  },
+  "bounds": {
+    "carrier": {
+      "sectors": 10,
+      "violations": 0
+    },
+    "battleship": {
+      "sectors": 8,
+      "violations": 0
+    },
+    "destroyer": {
+      "sectors": 5,
+      "violations": 0
+    }
+  },
+  "concealment": {
+    "renderer": {
+      "calls": 12,
+      "triangles": 46865,
+      "geometries": 15,
+      "textures": 8
+    },
+    "calls": 12,
+    "triangles": 46865,
+    "geometries": 15,
+    "textures": 8,
+    "materials": 14,
+    "dpr": 1,
+    "postPasses": 0,
+    "shadowLights": 1,
+    "shadowMap": 1024,
+    "board": "enemy",
+    "visibleShips": [],
+    "assets": {
+      "carrier": {
+        "sourceMeshes": 1309,
+        "triangles": 47608,
+        "sectors": 10
+      },
+      "battleship": {
+        "sourceMeshes": 1489,
+        "triangles": 51442,
+        "sectors": 8
+      },
+      "destroyer": {
+        "sourceMeshes": 1338,
+        "triangles": 42569,
+        "sectors": 5
+      }
+    },
+    "persistentEmitters": 1,
+    "particles": 15,
+    "debris": 0
+  },
+  "errors": []
+}

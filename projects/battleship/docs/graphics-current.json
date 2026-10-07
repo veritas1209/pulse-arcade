@@ -1,0 +1,690 @@
+{
+  "flight": {
+    "world": {
+      "renderer": {
+        "calls": 20,
+        "triangles": 88806,
+        "geometries": 22,
+        "textures": 10
+      },
+      "calls": 20,
+      "triangles": 88806,
+      "geometries": 22,
+      "textures": 10,
+      "dpr": 1,
+      "postPasses": 0,
+      "geometryCache": 2,
+      "surfacePointCache": 0,
+      "shadowLights": 1,
+      "shadowMap": 1024,
+      "boardSize": 30,
+      "camera": {
+        "position": [
+          1.8665401728132283,
+          7.696193138036632,
+          4.278670371850108
+        ],
+        "target": [
+          -1.9992411093176292,
+          -3.552713678800501e-15,
+          -1.9992411093176239
+        ],
+        "distance": 10.657758971970285,
+        "minDistance": 1.6,
+        "maxDistance": 205,
+        "screenSpacePanning": true,
+        "collisions": 0,
+        "lastObstacle": "none",
+        "seaClearance": 7.236193138036632,
+        "sweepRadius": 0.22,
+        "navigationFloor": 8,
+        "effectivePanDistance": 10.657758971970285,
+        "lastWheelStep": 14.410534837154268,
+        "middleMouse": "pan"
+      },
+      "selectedCellOutline": {
+        "x": 14,
+        "z": 14
+      },
+      "damageMarks": {
+        "0-carrier": []
+      },
+      "visibleShips": [
+        "0-carrier"
+      ],
+      "highDetailShips": 1,
+      "movingShips": 0,
+      "burningShips": 0,
+      "waterline": {
+        "0-carrier": {
+          "shipY": 0.0009339944002405834,
+          "waterY": -0.02821036271256979,
+          "lift": 0.029144357112810375
+        }
+      },
+      "shipPositions": {
+        "0-carrier": [
+          -2,
+          0.0009339944002405834,
+          -2
+        ]
+      },
+      "reconFighters": 0,
+      "reconModel": {
+        "name": "F-22 Raptor",
+        "length": 0.5,
+        "span": 0.36,
+        "triangles": 856
+      },
+      "islandCells": 0,
+      "islandTrees": 0,
+      "islandRocks": 0,
+      "reachableTiles": 0,
+      "deploymentTiles": 0,
+      "reconPreviewCells": 0,
+      "assets": {
+        "carrier": {
+          "sourceSize": [
+            13.349999952316285,
+            12.07000000178814,
+            43.69325356185436
+          ],
+          "fittedSize": [
+            1.0999410152435303,
+            0.9944784250110388,
+            3.6000001430511475
+          ],
+          "uniformScale": 0.0823925825277273,
+          "triangles": 45660,
+          "lowTriangles": 5248
+        },
+        "battleship": {
+          "sourceSize": [
+            8.094999999701976,
+            13.57000000178814,
+            43.69325356185436
+          ],
+          "fittedSize": [
+            0.6021238565444946,
+            1.0093662878498435,
+            3.25
+          ],
+          "uniformScale": 0.0743821925597538,
+          "triangles": 49004,
+          "lowTriangles": 5076
+        },
+        "destroyer": {
+          "sourceSize": [
+            6.394999999701977,
+            12.42000000178814,
+            37.69325356185436
+          ],
+          "fittedSize": [
+            0.4920111298561096,
+            0.9555556250270456,
+            2.9000000953674316
+          ],
+          "uniformScale": 0.07693684481869204,
+          "triangles": 40984,
+          "lowTriangles": 5680
+        }
+      },
+      "projectiles": [
+        {
+          "kind": "carrier",
+          "duration": 1.3,
+          "remaining": 0.7962000000000006,
+          "blocked": false
+        }
+      ],
+      "airbursts": 0,
+      "waterRings": 0,
+      "persistentEmitters": 0,
+      "fireEmitters": [],
+      "particles": 2,
+      "debris": 0
+    },
+    "preview": {
+      "visible": true,
+      "shipId": "0-carrier",
+      "hp": 1000,
+      "damageMarks": 0,
+      "modelScale": [
+        1,
+        1,
+        1
+      ],
+      "camera": {
+        "position": [
+          2.599999999999999,
+          2.0999999999999996,
+          3.799999999999999
+        ],
+        "target": [
+          0,
+          0.25,
+          0
+        ],
+        "distance": 4.962106407565238,
+        "minDistance": 1.1,
+        "maxDistance": 6,
+        "collisions": 0,
+        "lastObstacle": "none",
+        "seaClearance": null,
+        "sweepRadius": 0.22,
+        "navigationFloor": 3,
+        "effectivePanDistance": 4.962106407565238,
+        "lastWheelStep": 0,
+        "middleMouse": "pan"
+      },
+      "renderer": {
+        "calls": 2,
+        "triangles": 45660,
+        "geometries": 4,
+        "textures": 5
+      },
+      "projectiles": [],
+      "airbursts": 0,
+      "waterRings": 0,
+      "persistentEmitters": 0,
+      "fireEmitters": [],
+      "particles": 0,
+      "debris": 0
+    },
+    "events": [
+      {
+        "phase": "launch",
+        "seq": 1,
+        "kind": "carrier",
+        "t": 0.42335199999925194
+      }
+    ]
+  },
+  "damage": {
+    "world": {
+      "renderer": {
+        "calls": 14,
+        "triangles": 95796,
+        "geometries": 24,
+        "textures": 10
+      },
+      "calls": 14,
+      "triangles": 95796,
+      "geometries": 24,
+      "textures": 10,
+      "dpr": 1,
+      "postPasses": 0,
+      "geometryCache": 3,
+      "surfacePointCache": 2,
+      "shadowLights": 1,
+      "shadowMap": 1024,
+      "boardSize": 30,
+      "camera": {
+        "position": [
+          1.8665401728132283,
+          7.696193138036632,
+          4.278670371850108
+        ],
+        "target": [
+          -1.9992411093176292,
+          -3.552713678800501e-15,
+          -1.9992411093176239
+        ],
+        "distance": 10.657758971970285,
+        "minDistance": 1.6,
+        "maxDistance": 205,
+        "screenSpacePanning": true,
+        "collisions": 0,
+        "lastObstacle": "none",
+        "seaClearance": 7.236193138036632,
+        "sweepRadius": 0.22,
+        "navigationFloor": 8,
+        "effectivePanDistance": 10.657758971970285,
+        "lastWheelStep": 14.410534837154268,
+        "middleMouse": "pan"
+      },
+      "selectedCellOutline": {
+        "x": 14,
+        "z": 14
+      },
+      "damageMarks": {
+        "0-carrier": [
+          {
+            "x": -0.17,
+            "z": -0.3,
+            "seed": 1937
+          },
+          {
+            "x": 0.23,
+            "z": 0.38,
+            "seed": 3874
+          }
+        ]
+      },
+      "visibleShips": [
+        "0-carrier"
+      ],
+      "highDetailShips": 1,
+      "movingShips": 0,
+      "burningShips": 1,
+      "waterline": {
+        "0-carrier": {
+          "shipY": -0.023189720165090376,
+          "waterY": -0.05917012169216643,
+          "lift": 0.03598040152707605
+        }
+      },
+      "shipPositions": {
+        "0-carrier": [
+          -2,
+          -0.023189720165090376,
+          -2
+        ]
+      },
+      "reconFighters": 0,
+      "reconModel": {
+        "name": "F-22 Raptor",
+        "length": 0.5,
+        "span": 0.36,
+        "triangles": 856
+      },
+      "islandCells": 0,
+      "islandTrees": 0,
+      "islandRocks": 0,
+      "reachableTiles": 0,
+      "deploymentTiles": 0,
+      "reconPreviewCells": 0,
+      "assets": {
+        "carrier": {
+          "sourceSize": [
+            13.349999952316285,
+            12.07000000178814,
+            43.69325356185436
+          ],
+          "fittedSize": [
+            1.0999410152435303,
+            0.9944784250110388,
+            3.6000001430511475
+          ],
+          "uniformScale": 0.0823925825277273,
+          "triangles": 45660,
+          "lowTriangles": 5248
+        },
+        "battleship": {
+          "sourceSize": [
+            8.094999999701976,
+            13.57000000178814,
+            43.69325356185436
+          ],
+          "fittedSize": [
+            0.6021238565444946,
+            1.0093662878498435,
+            3.25
+          ],
+          "uniformScale": 0.0743821925597538,
+          "triangles": 49004,
+          "lowTriangles": 5076
+        },
+        "destroyer": {
+          "sourceSize": [
+            6.394999999701977,
+            12.42000000178814,
+            37.69325356185436
+          ],
+          "fittedSize": [
+            0.4920111298561096,
+            0.9555556250270456,
+            2.9000000953674316
+          ],
+          "uniformScale": 0.07693684481869204,
+          "triangles": 40984,
+          "lowTriangles": 5680
+        }
+      },
+      "projectiles": [],
+      "airbursts": 0,
+      "waterRings": 0,
+      "persistentEmitters": 2,
+      "fireEmitters": [
+        {
+          "position": [
+            -1.9065050137043,
+            0.3610175123101904,
+            -1.4599999785423279
+          ],
+          "scale": 0.0738,
+          "strength": 0.75,
+          "flameHeight": 0.245385,
+          "maxFlameWidth": 0.24907500000000002,
+          "smokeHeight": 0.59778
+        },
+        {
+          "position": [
+            -2.1264932167530057,
+            0.3610175123101904,
+            -2.684000027179718
+          ],
+          "scale": 0.0738,
+          "strength": 0.75,
+          "flameHeight": 0.245385,
+          "maxFlameWidth": 0.24907500000000002,
+          "smokeHeight": 0.59778
+        }
+      ],
+      "particles": 30,
+      "debris": 0
+    },
+    "preview": {
+      "visible": true,
+      "shipId": "0-carrier",
+      "hp": 600,
+      "damageMarks": 2,
+      "modelScale": [
+        1,
+        1,
+        1
+      ],
+      "camera": {
+        "position": [
+          2.599999999999999,
+          2.0999999999999996,
+          3.799999999999999
+        ],
+        "target": [
+          0,
+          0.25,
+          0
+        ],
+        "distance": 4.962106407565238,
+        "minDistance": 1.1,
+        "maxDistance": 6,
+        "collisions": 0,
+        "lastObstacle": "none",
+        "seaClearance": null,
+        "sweepRadius": 0.22,
+        "navigationFloor": 3,
+        "effectivePanDistance": 4.962106407565238,
+        "lastWheelStep": 0,
+        "middleMouse": "pan"
+      },
+      "renderer": {
+        "calls": 2,
+        "triangles": 52758,
+        "geometries": 4,
+        "textures": 5
+      },
+      "projectiles": [],
+      "airbursts": 0,
+      "waterRings": 0,
+      "persistentEmitters": 2,
+      "fireEmitters": [
+        {
+          "position": [
+            0.09349498629570001,
+            0.38420723247528077,
+            0.5400000214576721
+          ],
+          "scale": 0.0738,
+          "strength": 0.75,
+          "flameHeight": 0.245385,
+          "maxFlameWidth": 0.24907500000000002,
+          "smokeHeight": 0.59778
+        },
+        {
+          "position": [
+            -0.1264932167530059,
+            0.38420723247528077,
+            -0.684000027179718
+          ],
+          "scale": 0.0738,
+          "strength": 0.75,
+          "flameHeight": 0.245385,
+          "maxFlameWidth": 0.24907500000000002,
+          "smokeHeight": 0.59778
+        }
+      ],
+      "particles": 30,
+      "debris": 0
+    },
+    "events": [
+      {
+        "phase": "launch",
+        "seq": 1,
+        "kind": "carrier",
+        "t": 0.42335199999925194
+      },
+      {
+        "phase": "impact",
+        "seq": 1,
+        "kind": "carrier",
+        "t": 1.7241519999992514
+      },
+      {
+        "phase": "launch",
+        "seq": 2,
+        "kind": "carrier",
+        "t": 2.4739519999992514
+      },
+      {
+        "phase": "impact",
+        "seq": 2,
+        "kind": "carrier",
+        "t": 3.775651999999248
+      }
+    ]
+  },
+  "blocked": {
+    "world": {
+      "renderer": {
+        "calls": 14,
+        "triangles": 95796,
+        "geometries": 24,
+        "textures": 10
+      },
+      "calls": 14,
+      "triangles": 95796,
+      "geometries": 24,
+      "textures": 10,
+      "dpr": 1,
+      "postPasses": 0,
+      "geometryCache": 3,
+      "surfacePointCache": 2,
+      "shadowLights": 1,
+      "shadowMap": 1024,
+      "boardSize": 30,
+      "camera": {
+        "position": [
+          1.8665401728132283,
+          7.696193138036632,
+          4.278670371850108
+        ],
+        "target": [
+          -1.9992411093176292,
+          -3.552713678800501e-15,
+          -1.9992411093176239
+        ],
+        "distance": 10.657758971970285,
+        "minDistance": 1.6,
+        "maxDistance": 205,
+        "screenSpacePanning": true,
+        "collisions": 0,
+        "lastObstacle": "none",
+        "seaClearance": 7.236193138036632,
+        "sweepRadius": 0.22,
+        "navigationFloor": 8,
+        "effectivePanDistance": 10.657758971970285,
+        "lastWheelStep": 14.410534837154268,
+        "middleMouse": "pan"
+      },
+      "selectedCellOutline": {
+        "x": 14,
+        "z": 14
+      },
+      "damageMarks": {
+        "0-carrier": [
+          {
+            "x": -0.17,
+            "z": -0.3,
+            "seed": 1937
+          },
+          {
+            "x": 0.23,
+            "z": 0.38,
+            "seed": 3874
+          }
+        ]
+      },
+      "visibleShips": [
+        "0-carrier"
+      ],
+      "highDetailShips": 1,
+      "movingShips": 0,
+      "burningShips": 1,
+      "waterline": {
+        "0-carrier": {
+          "shipY": 0.049994462354544675,
+          "waterY": 0.020612296783886846,
+          "lift": 0.02938216557065783
+        }
+      },
+      "shipPositions": {
+        "0-carrier": [
+          -2,
+          0.049994462354544675,
+          -2
+        ]
+      },
+      "reconFighters": 0,
+      "reconModel": {
+        "name": "F-22 Raptor",
+        "length": 0.5,
+        "span": 0.36,
+        "triangles": 856
+      },
+      "islandCells": 0,
+      "islandTrees": 0,
+      "islandRocks": 0,
+      "reachableTiles": 0,
+      "deploymentTiles": 0,
+      "reconPreviewCells": 0,
+      "assets": {
+        "carrier": {
+          "sourceSize": [
+            13.349999952316285,
+            12.07000000178814,
+            43.69325356185436
+          ],
+          "fittedSize": [
+            1.0999410152435303,
+            0.9944784250110388,
+            3.6000001430511475
+          ],
+          "uniformScale": 0.0823925825277273,
+          "triangles": 45660,
+          "lowTriangles": 5248
+        },
+        "battleship": {
+          "sourceSize": [
+            8.094999999701976,
+            13.57000000178814,
+            43.69325356185436
+          ],
+          "fittedSize": [
+            0.6021238565444946,
+            1.0093662878498435,
+            3.25
+          ],
+          "uniformScale": 0.0743821925597538,
+          "triangles": 49004,
+          "lowTriangles": 5076
+        },
+        "destroyer": {
+          "sourceSize": [
+            6.394999999701977,
+            12.42000000178814,
+            37.69325356185436
+          ],
+          "fittedSize": [
+            0.4920111298561096,
+            0.9555556250270456,
+            2.9000000953674316
+          ],
+          "uniformScale": 0.07693684481869204,
+          "triangles": 40984,
+          "lowTriangles": 5680
+        }
+      },
+      "projectiles": [],
+      "airbursts": 1,
+      "waterRings": 0,
+      "persistentEmitters": 2,
+      "fireEmitters": [
+        {
+          "position": [
+            -1.9065050137043,
+            0.43420169482982546,
+            -1.4599999785423279
+          ],
+          "scale": 0.0738,
+          "strength": 0.75,
+          "flameHeight": 0.245385,
+          "maxFlameWidth": 0.24907500000000002,
+          "smokeHeight": 0.59778
+        },
+        {
+          "position": [
+            -2.1264932167530057,
+            0.43420169482982546,
+            -2.684000027179718
+          ],
+          "scale": 0.0738,
+          "strength": 0.75,
+          "flameHeight": 0.245385,
+          "maxFlameWidth": 0.24907500000000002,
+          "smokeHeight": 0.59778
+        }
+      ],
+      "particles": 78,
+      "debris": 0
+    },
+    "events": [
+      {
+        "phase": "launch",
+        "seq": 1,
+        "kind": "carrier",
+        "t": 0.42335199999925194
+      },
+      {
+        "phase": "impact",
+        "seq": 1,
+        "kind": "carrier",
+        "t": 1.7241519999992514
+      },
+      {
+        "phase": "launch",
+        "seq": 2,
+        "kind": "carrier",
+        "t": 2.4739519999992514
+      },
+      {
+        "phase": "impact",
+        "seq": 2,
+        "kind": "carrier",
+        "t": 3.775651999999248
+      },
+      {
+        "phase": "launch",
+        "seq": 3,
+        "kind": "carrier",
+        "t": 8.882751999999263
+      },
+      {
+        "phase": "impact",
+        "seq": 3,
+        "kind": "carrier",
+        "t": 9.803551999999272
+      }
+    ]
+  },
+  "errors": []
+}

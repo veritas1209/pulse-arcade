@@ -1,0 +1,1 @@
+import {defineConfig} from '@playwright/test';export default defineConfig({testDir:'.',testMatch:['wake-physics.spec.ts','wake-noise.spec.ts','torpedo-wake.spec.ts'],workers:1,timeout:30000});

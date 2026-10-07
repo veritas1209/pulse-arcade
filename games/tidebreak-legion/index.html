@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#102c3c">
+  <title>TIDEBREAK — 해안 돌파</title>
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+<body data-state="menu">
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-shield" viewBox="0 0 32 36"><path d="M5 2h22l3 4v24l-3 4H5l-3-4V6Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m8 10 8 5 8-5v5l-8 5-8-5Zm0 10 8 5 8-5v5l-8 5-8-5Z" fill="currentColor"/><path d="M13 5h6" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-sword" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v5m0 10v5M2 12h5m10 0h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4Zm12-1a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-volley" viewBox="0 0 32 32"><path d="M12 10 16 3l4 7v18h-8Zm-9 4 3-6 3 6v14H3Zm20 0 3-6 3 6v14h-6Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 13h8M3 17h6m14 0h6M12 24h8M3 24h6m14 0h6" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 32 32"><path d="M13 22 23 5l4-2 1 5-10 17Zm0 0-5 1 2-7 7-5m1 14 1 5 6-5 2-10M6 27l5-3m-2 6 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-tank" viewBox="0 0 32 32"><path d="M5 18h22a5 5 0 0 1 0 10H5a5 5 0 0 1 0-10Zm4 0 2-8h11l3 8M18 10V7h12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7" cy="23" r="2" fill="currentColor"/><circle cx="16" cy="23" r="2" fill="currentColor"/><circle cx="25" cy="23" r="2" fill="currentColor"/></symbol>
+  </defs></svg>
+
+  <main id="game" aria-label="해안 돌파 3D 게임"></main>
+  <div class="screen-shade" aria-hidden="true"></div>
+
+  <header class="brand">
+    <svg class="brand-crest"><use href="#i-shield"/></svg>
+    <div><span class="brand-name">TIDEBREAK</span><span class="brand-sub">COASTAL OPERATIONS</span></div>
+  </header>
+
+  <div class="battle-hud" aria-label="전투 현황">
+    <div class="troop-banner"><svg><use href="#i-shield"/></svg><div><span class="hud-label">아군 병력</span><strong id="troop-count">12</strong></div><span class="troop-unit">명</span></div>
+    <div class="route-hud"><div class="route-caption"><span id="stage-name">해안 진입</span><span class="route-goal">본부까지</span></div><div class="progress-track"><div id="progress-fill"></div><span class="goal-diamond"></span></div><div class="kill-stat"><svg><use href="#i-sword"/></svg><strong id="kill-count">0</strong><span>격파</span></div><div id="objective-text" class="objective-ribbon">중전차 격파</div><div id="threat-level" class="threat-level">위협 단계 1</div></div>
+  </div>
+
+  <nav class="quick-controls" aria-label="게임 설정">
+    <button id="audio-btn" class="icon-button" type="button" aria-label="소리 켜기 또는 끄기" title="소리 켜기 / 끄기"><svg><use href="#i-sound"/></svg></button>
+    <button id="pause-btn" class="icon-button" type="button" aria-label="일시정지" title="일시정지 (P)"><span class="pause-icon" aria-hidden="true"></span></button>
+  </nav>
+
+  <section id="menu" class="menu" aria-label="게임 시작">
+    <div class="menu-header">
+      <div class="chapter-label"><span></span> COASTAL OPERATIONS / FIELD BRIEF <span></span></div>
+      <h1>해안 돌파</h1>
+      <p class="menu-subtitle">소규모 분대에서, 압도적인 전력으로.</p>
+      <p class="menu-description">중전차, 전함, 초대형 폭격기.<br>더 거대한 적을 향해 전진하세요.</p>
+    </div>
+    <div class="operation-config">
+      <fieldset class="mission-picker"><legend>작전 지역 <span>SELECT OPERATION</span></legend><div class="picker-row">
+        <button id="stage-0" title="01 교두보 · 중전차 격파" class="mission-option active" type="button" aria-pressed="true"><span>01</span> 교두보</button>
+        <button id="stage-1" title="02 보급항 · 전함 격침" class="mission-option" type="button" aria-pressed="false"><span>02</span> 보급항</button>
+        <button id="stage-2" title="03 사령부 · 초대형 전익 폭격기 요격" class="mission-option" type="button" aria-pressed="false"><span>03</span> 사령부</button>
+      </div></fieldset>
+      <p id="mission-copy" class="mission-copy">병력을 모아 교두보를 지키는 중전차를 격파하세요.</p>
+      <fieldset class="difficulty-picker"><legend>난이도 <span>ENGAGEMENT LEVEL</span></legend><div class="picker-row">
+        <button id="difficulty-easy" class="difficulty-option" type="button" aria-pressed="false">입문</button>
+        <button id="difficulty-normal" class="difficulty-option active" type="button" aria-pressed="true">전술</button>
+        <button id="difficulty-hard" class="difficulty-option" type="button" aria-pressed="false">베테랑</button>
+      </div></fieldset>
+    </div>
+    <div class="menu-actions">
+      <button id="start-btn" class="primary-button" type="button"><span>작전 시작</span><svg><use href="#i-arrow"/></svg></button>
+      <div class="control-guide"><div><span class="control-keys">드래그 <b>/</b> A·D <b>/</b> ←·→</span><span>좌우 이동</span></div><div><span class="control-keys">Space</span><span>집중 사격</span><span class="guide-dot">·</span><span class="control-keys">P</span><span>일시정지</span></div></div>
+      <div class="auto-note"><span></span> 전진과 사격은 자동으로 진행됩니다</div><p class="arsenal-note">병력 300부터 추가 피해 · 장애물 파괴로 지원 무기 획득</p>
+    </div>
+  </section>
+
+  <div class="play-hint"><span>←</span> 드래그하여 분대 이동 <span>→</span></div>
+  <aside class="equipment-hud" aria-label="지원 장비와 화력">
+    <div class="equipment-heading"><span>지원 장비</span><span id="pace-label">전투 속도 1.0×</span></div>
+    <div class="equipment-slots">
+      <div id="equipment-minigun" class="equipment-slot" title="미니건 미획득"><svg><use href="#i-volley"/></svg><span>미니건</span></div>
+      <div id="equipment-rocket" class="equipment-slot" title="로켓 미획득"><svg><use href="#i-rocket"/></svg><span>로켓</span></div>
+      <div id="equipment-tank" class="equipment-slot" title="지원 탱크 미획득"><svg><use href="#i-tank"/></svg><span>지원 탱크</span></div>
+    </div>
+    <div class="damage-line"><span>화력</span><strong id="damage-readout">기본 8 + 0%</strong></div>
+  </aside>
+  <div class="ability-hud"><button id="ability-btn" type="button" aria-label="집중 사격 (Space)"><span id="ability-fill"></span><svg><use href="#i-volley"/></svg><span class="ability-title">집중 사격</span><kbd>SPACE</kbd></button></div>
+  <section id="stage-intro" class="stage-intro hidden" aria-live="polite"><span class="eyebrow">OPERATION BRIEFING</span><h2 id="intro-title">01 · 해안 교두보</h2><p id="intro-copy">병력을 확보하고 첫 방어선을 돌파하세요.</p></section>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <section id="pause-overlay" class="modal-backdrop hidden" aria-label="일시정지">
+    <div class="modal-panel"><span class="eyebrow">OPERATION PAUSED</span><h2>작전 일시 중지</h2><p>분대가 다음 명령을 대기하고 있습니다.</p><button id="resume-btn" class="primary-button" type="button"><span>작전 계속하기</span><svg><use href="#i-arrow"/></svg></button><div class="pause-secondary-actions"><button id="pause-restart-btn" class="secondary-button" type="button">처음부터 다시</button><button id="main-menu-btn" class="secondary-button menu-return-button" type="button">메인 화면으로</button></div></div>
+  </section>
+  <section id="result" class="modal-backdrop hidden" aria-label="전투 결과">
+    <div class="modal-panel result-panel"><svg class="result-crest"><use href="#i-shield"/></svg><span class="eyebrow">OPERATION REPORT</span><h2 id="result-title">적 본부 돌파 완료</h2><p id="result-copy">해안 방어선을 돌파했습니다. 작전 성공.</p><div id="result-stats" class="result-stats"></div><button id="next-stage-btn" class="secondary-button next-stage-button hidden" type="button">다음 작전으로 →</button><button id="restart-btn" class="primary-button" type="button"><span>다시 투입하기</span><svg><use href="#i-arrow"/></svg></button><button id="result-menu-btn" class="secondary-button menu-return-button" type="button">메인 화면으로</button></div>
+  </section>
+  <div id="loading" class="loading" role="status"><svg><use href="#i-shield"/></svg><span>TIDEBREAK</span><p>작전 지역으로 이동 중…</p><div class="loading-line"></div></div>
+  <footer class="edition-mark">TIDEBREAK <span> / </span> COASTAL OPERATIONS · 01</footer>
+  <script src="./game.js"></script>
+</body>
+</html>
+

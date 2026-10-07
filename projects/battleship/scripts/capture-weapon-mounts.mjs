@@ -1,0 +1,27 @@
+import {chromium} from '@playwright/test';
+import fs from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const out='artifacts/weapon-mounts-gpu';await fs.mkdir(out,{recursive:true});
+const browser=await chromium.launch({channel:'chrome'}),page=await browser.newPage({viewport:{width:1600,height:1000}}),errors=[];
+page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
+await page.route('**/weapon-mount-fixture',r=>r.fulfill({contentType:'text/html',body:'<body style="margin:0"><canvas style="width:100vw;height:100vh"></canvas></body>'}));
+await page.goto('http://127.0.0.1:5195/weapon-mount-fixture');
+await page.evaluate(async()=>{
+ const [{createNavalScene},{createParts}]=await Promise.all([import('/src/scene.ts'),import('/src/parts.ts')]);let time=17;const phases=[],defenses=[];
+ const scene=createNavalScene(document.querySelector('canvas'),()=>{},undefined,(phase,shot)=>phases.push({phase,sequence:shot.sequence,time}),undefined,undefined,event=>defenses.push({...event,position:event.position.toArray(),time}));
+ const make=(id,kind,x,z)=>({id,kind,team:0,x,z,heading:0,hp:800,maxHp:800,ap:4,maxAp:4,sunk:false,attacked:false,moved:false,parts:createParts(kind)}),ships=[make('ddg','destroyer',14,4),make('iowa','battleship',16,4),make('guard','destroyer',14,6)];
+ scene.setState({you:0,turn:0,own:ships,revealed:[],islands:[],visibleCells:ships,recon:[],selectedId:'ddg'});
+ window.fixture={scene,ships,phases,defenses,step(n){for(let i=0;i<n;i++)scene.update(1/60,time+=1/60);scene.render();return scene.diagnostics();},fire(source,target,kind,blocked,sequence){scene.impact({x:target.x,z:target.z,source:{x:source.x,z:source.z},interceptedBy:blocked?{x:target.x,z:target.z}:undefined,by:0,sequence,kind,hit:blocked,damage:0,blocked,halved:false},blocked?target:undefined);}};
+});
+await page.waitForFunction(()=>{const f=window.fixture;f.step(2);const d=f.scene.diagnostics();return d.texturesReady&&d.damagePreparation.pending===0&&d.damagePreparation.status==='ready';},{},{timeout:60000});
+const states={};
+states.base=await page.evaluate(()=>{const f=window.fixture;f.scene.focus(f.ships[1],true);return f.step(280);});await page.screenshot({path:`${out}/iowa-clean-deck.png`});
+states.gunPrep=await page.evaluate(()=>{const f=window.fixture;f.fire(f.ships[1],f.ships[2],'shell',false,100);return f.step(10);});await page.screenshot({path:`${out}/gun-aiming.png`});assert.equal(states.gunPrep.gunLaunches,0);assert.equal(states.gunPrep.projectiles[0].phase,'preparing');
+states.gunLaunch=await page.evaluate(()=>{const f=window.fixture;f.step(100);return f.step(1);});await page.screenshot({path:`${out}/gun-flight.png`});assert.equal(states.gunLaunch.gunLaunches,1);assert.equal(states.gunLaunch.shellDeliveryTriangles,336);
+await page.evaluate(()=>window.fixture.step(650));
+states.vlsOpen=await page.evaluate(()=>{const f=window.fixture;f.scene.focus(f.ships[0],true);f.step(280);f.fire(f.ships[0],f.ships[2],'missile',true,101);return f.step(27);});await page.screenshot({path:`${out}/vls-open.png`});assert.equal(states.vlsOpen.missileLaunches,0);assert(states.vlsOpen.weaponMounts.vessels.find(v=>v.id==='ddg').mounts.some(m=>m.role==='lid'&&m.opening>1));
+states.vlsLaunch=await page.evaluate(()=>window.fixture.step(35));await page.screenshot({path:`${out}/vls-vertical-launch.png`});assert.equal(states.vlsLaunch.missileLaunches,1);assert.equal(states.vlsLaunch.missileDeliveryTriangles,2295);
+states.ciws=await page.evaluate(()=>{const f=window.fixture;for(let i=0;i<350;i++){const d=f.step(1);if(d.ciwsTracers>6){f.scene.focus(f.ships[2]);return f.step(15);}}throw new Error('No visible CIWS');});await page.screenshot({path:`${out}/ciws-from-model.png`});assert(states.ciws.ciwsTracers>0);assert(states.ciws.ciwsRounds>0);
+states.intercept=await page.evaluate(()=>window.fixture.step(100));await page.screenshot({path:`${out}/intercept-smoke.png`});assert.equal(states.intercept.interceptSmokeCount,1);
+const events=await page.evaluate(()=>({phases:window.fixture.phases,defenses:window.fixture.defenses}));for(const id of [100,101])assert.deepEqual(events.phases.filter(e=>e.sequence===id).map(e=>e.phase),['launch','impact']);
+await page.evaluate(()=>window.fixture.scene.dispose());await browser.close();await fs.writeFile(`${out}/report.json`,JSON.stringify({errors,events,states},null,2));assert.deepEqual(errors,[]);console.log(JSON.stringify({passed:true,errors,events,renderers:Object.fromEntries(Object.entries(states).map(([k,s])=>[k,s.renderer]))}));

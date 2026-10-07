@@ -1,0 +1,27 @@
+* text=auto
+*.js text eol=lf
+*.ts text eol=lf
+*.py text eol=lf
+*.json text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.md text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.glb binary
+*.wav binary
+*.mp3 binary
+*.ogg binary
+*.zip binary
+
+# Deployed release files retain their original bytes for SHA-256 manifests.
+/portal/** -text
+/server/** -text
+/games/** -text
+/*.js -text
+/*.css -text
+/*.html -text

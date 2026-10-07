@@ -1,0 +1,96 @@
+{
+  "license": "CC0-1.0",
+  "source": "https://polyhaven.com/a/coast_land_rocks_01",
+  "licenseUrl": "https://polyhaven.com/license",
+  "authors": [
+    "Rob Tuytel",
+    "Rico Cilliers"
+  ],
+  "sourceMaps": [
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/coast_land_rocks_01/coast_land_rocks_01_diff_1k.jpg",
+      "sha256": "21ba7fb3fd61e54d4256013673cff00fc837a242c52bbbe178d55c628536a07f"
+    },
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/coast_land_rocks_01/coast_land_rocks_01_nor_gl_1k.jpg",
+      "sha256": "09a222280ae75fc1899f1403cc067d27df34d898fc9144633f281051e02165bf"
+    },
+    {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/coast_land_rocks_01/coast_land_rocks_01_rough_1k.jpg",
+      "sha256": "25fbf1f2d469b1446bef6f93b08b82356436b5583af641f1f127a51ff52506b8"
+    }
+  ],
+  "runtime": [
+    {
+      "file": "coast-v2-color.webp",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 144622,
+      "colorSpace": "sRGB"
+    },
+    {
+      "file": "coast-v2-normal.webp",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 549434,
+      "colorSpace": "NoColorSpace"
+    },
+    {
+      "file": "coast-v2-roughness.webp",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 265464,
+      "colorSpace": "NoColorSpace"
+    },
+    {
+      "file": "naval-v2-color.webp",
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "bytes": 84262,
+      "colorSpace": "sRGB"
+    },
+    {
+      "file": "naval-v2-normal.webp",
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "bytes": 866206,
+      "colorSpace": "NoColorSpace"
+    },
+    {
+      "file": "naval-v2-roughness.webp",
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "bytes": 125838,
+      "colorSpace": "NoColorSpace"
+    }
+  ],
+  "atlas": {
+    "roles": [
+      "painted steel",
+      "non-skid flight/deck",
+      "teak deck",
+      "bare machinery",
+      "glass",
+      "white trim",
+      "anti-fouling",
+      "interior steel"
+    ],
+    "tileSize": 512,
+    "gutter": 12,
+    "source": "Authored deterministic surface process in scripts/prepare-surface-textures.py",
+    "seed": 49127
+  },
+  "estimatedRGBA8MipMemoryMiB": 48.0
+}
